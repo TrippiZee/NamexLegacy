@@ -8,8 +8,14 @@ require ("includes/db_connection.php");
 <head>
     <title>Namibia Express Transport Doc Management System</title>
     <link href="stylesheets/style.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="scripts/bootstrap.min.js" media="all" rel="stylesheet" type="text/css" />
+    <link href="scripts/dataTables.bootstrap.min.js" media="all" rel="stylesheet" type="text/css" />
+    <link href="scripts/jquery-ui-1.12.1/jquery-ui.min.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="scripts/jquery-3.1.1.min.js"></script>
     <script src="scripts/functions.js"></script>
-
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/dataTables.bootstrap.min.js"></script>
+    <script src="scripts/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 
 </head>
 <body>
