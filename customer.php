@@ -19,7 +19,6 @@ include "header.php";
     </div>
     </form>
     <div id="table">
-
         <?php
 
         $id = '';
@@ -30,7 +29,7 @@ include "header.php";
             $customer = mysqli_fetch_array($query_result);
 
             echo '<h2>Details:</h2>';
-            echo "<table id=\"table\">";
+            echo '<table class="table table-striped dataTable default">';
             echo "<tr><th>Name</th><th>Address1</th><th>Address2</th><th>City</th><th>Country</th></tr>";
             echo '<tr><td>'. $customer['comp_name']. '</td>';
             echo '<td>'.$customer['address1'].'</td>';
@@ -48,12 +47,50 @@ include "header.php";
             if (getuserfield('role') == 'admin'){
                 echo '<tr><td class="edit"><a href="del_customer.php?id='.$customer['id'].'" onclick="return confirm(\'Really Delete?\');"><input type="button" value="Delete"/></a></td>';}
             echo "</tr>";
-            echo "</table>";
+        }
+//        else {
+//            $query_result = customer_full();
+//            echo '<h2>All Customers:</h2>';
+//            while($AllCustomer = mysqli_fetch_assoc($query_result)) {
+////                echo '<table class="table table-striped dataTable default">';
+//                echo '<table class="table table-striped dataTable default">';
+//                echo '<thead>';
+//                echo "<tr><th>Name</th><th>Address1</th><th>City</th><th>Country</th></tr>";
+//                echo '</thead>';
+//                echo '<tbody>';
+//                echo '<tr><td class="edit"><a href="customer.php?id='.$AllCustomer['id'].'">' . $AllCustomer['comp_name'] . '</a></td>';
+//                echo '<td>' . $AllCustomer['address1'] . '</td>';
+//                echo '<td>' . $AllCustomer['city'] . '</td>';
+//                echo '<td>' . $AllCustomer['country'] . '</td></tr>';
+//                echo '</tbody>';
+//                echo '</table>';
+//            }
+//
+//        }
+        else {
+            $query_result = customer_full();
+            echo '<h2>All Customers:</h2>';
+            $table = '<table class="table table-striped dataTable default">
+                    <thead>
+                    <tr><th>Name</th><th>Address1</th><th>City</th><th>Country</th></tr>
+                    </thead>
+                    <tbody>
+            ';
+            while($AllCustomer = mysqli_fetch_assoc($query_result)) {
+                $table.= '<tr><td class="edit"><a href="customer.php?id='.$AllCustomer['id'].'">' . $AllCustomer['comp_name'] . '</a></td>
+                <td>' . $AllCustomer['address1'] . '</td>
+                <td>' . $AllCustomer['city'] . '</td>
+                <td>' . $AllCustomer['country'] . '</td></tr>';
+            }
+            $table.= '</tbody></table>';
+            echo $table;
         }
 
         ?>
 
-
     </div>
 </div>
+<?php
+include "footer.php";
+?>
 

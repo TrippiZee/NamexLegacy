@@ -42,7 +42,18 @@ include "header.php";
         echo "</tr>";
         echo "</table>";
     }
-
+    else {
+        $query_result = user_All();
+        while($AllUser = mysqli_fetch_assoc($query_result)) {
+            echo "<table>";
+            echo "<tr><th>Username</th><th>Password</th><th>Name</th><th>Surname</th><th>Role</th></tr>";
+            echo '<tr><td class="edit"><a href="user.php?id='.$AllUser['id'].'">'. $AllUser['username']. '</a></td>';
+            echo '<td>'.$AllUser['password'].'</td>';
+            echo '<td>'.$AllUser['name'].'</td>';
+            echo '<td>'.$AllUser['surname'].'</td>';
+            echo '<td>'.$AllUser['role'].'</td></tr>';
+        }
+    }
     ?>
 
 </div>

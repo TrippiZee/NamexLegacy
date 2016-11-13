@@ -123,6 +123,20 @@ include "header.php";
             echo "</table>";
 
     }
+     else {
+        $query_result = manifest_All();
+        while($AllManifest = mysqli_fetch_assoc($query_result)) {
+            echo "<table>";
+            echo "<tr><th>Date</th><th>Manifest No</th><th>Driver</th><th>Co-Driver</th><th>Reg No</th></tr>";
+
+            echo '<tr><td class="edit"><a href="manifest.php?id='.$AllManifest['id'].'">'. $AllManifest['date']. '</a></td>';
+            echo '<td>'.$AllManifest['manifest_no'].'</td>';
+            echo '<td>'.$AllManifest['driver'].'</td>';
+            echo '<td>'.$AllManifest['co_driver'].'</td>';
+            echo '<td>'.$AllManifest['reg_no'].'</td></tr>';
+        }
+    }
+
     ?>
 </div>
 </div>

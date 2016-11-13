@@ -76,6 +76,17 @@ function manifest_details ($id){
     return $manifest_details_result;
 }
 
+function manifest_All (){
+    global $connection;
+
+    $query = 'SELECT * ';
+    $query .= 'FROM manifest ';
+    $query .= 'ORDER BY date DESC ';
+    $manifest_details_result = mysqli_query($connection,$query);
+    confirm_query($manifest_details_result);
+    return $manifest_details_result;
+}
+
 function customer ($id){
     global $connection;
 
@@ -109,12 +120,33 @@ function pod ($id){
     return $pod_result;
 }
 
+function pod_All (){
+    global $connection;
+
+    $query = 'SELECT * ';
+    $query .= 'FROM pod ';
+    $query .= 'ORDER BY date ';
+    $pod_result = mysqli_query($connection,$query);
+    confirm_query($pod_result);
+    return $pod_result;
+}
+
 function user ($id){
     global $connection;
 
     $query = 'SELECT * ';
     $query .= 'FROM users ';
     $query .= "WHERE id = {$id}";
+    $user_result = mysqli_query($connection,$query);
+    confirm_query($user_result);
+    return $user_result;
+}
+function user_All (){
+    global $connection;
+
+    $query = 'SELECT * ';
+    $query .= 'FROM users ';
+    $query .= 'ORDER BY name';
     $user_result = mysqli_query($connection,$query);
     confirm_query($user_result);
     return $user_result;
@@ -235,4 +267,6 @@ function economy($id) {
     confirm_query($economy_result);
     return $economy_result;
 }
+
+
 ?>

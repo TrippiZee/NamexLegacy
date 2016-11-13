@@ -50,7 +50,17 @@ include "header.php";
         echo "</tr>";
         echo "</table>";
     }
-
+    else {
+        $query_result = pod_All();
+        while($AllPod = mysqli_fetch_assoc($query_result)) {
+            echo "<table>";
+            echo "<tr><th>POD Number</th><th>Date</th><th>Shipper</th><th>Consignee</th></tr>";
+            echo '<tr><td class="edit"><a href="pod.php?id='.$AllPod['id'].'">'. $AllPod['pod_no']. '</a></td>';
+            echo '<td>'.$AllPod['date'].'</td>';
+            echo '<td>'.$AllPod['shipper'].'</td>';
+            echo '<td>'.$AllPod['consignee'].'</td>';
+        }
+    }
     ?>
 
 </div>
