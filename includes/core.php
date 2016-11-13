@@ -32,17 +32,6 @@ function confirm_query($result_set) {
     }
 }
 
-function waybill (){
-    global $connection;
-
-    $query = 'SELECT * ';
-    $query .= 'FROM waybill ';
-    $query .= 'ORDER BY waybill_no ASC';
-    $waybill_result = mysqli_query($connection,$query);
-    confirm_query($waybill_result);
-    return $waybill_result;
-}
-
 function manifest ($id){
     global $connection;
 
@@ -65,6 +54,17 @@ function get_manifest_no ($id){
     return $manifest_no_result;
 }
 
+function manifest_All (){
+    global $connection;
+
+    $query = 'SELECT * ';
+    $query .= 'FROM manifest ';
+    $query .= 'ORDER BY date DESC ';
+    $manifest_details_result = mysqli_query($connection,$query);
+    confirm_query($manifest_details_result);
+    return $manifest_details_result;
+}
+
 function manifest_details ($id){
     global $connection;
 
@@ -76,12 +76,11 @@ function manifest_details ($id){
     return $manifest_details_result;
 }
 
-function manifest_All (){
+function waybill_all (){
     global $connection;
 
     $query = 'SELECT * ';
-    $query .= 'FROM manifest ';
-    $query .= 'ORDER BY date DESC ';
+    $query .= 'FROM manifest_details ';
     $manifest_details_result = mysqli_query($connection,$query);
     confirm_query($manifest_details_result);
     return $manifest_details_result;

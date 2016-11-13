@@ -11,13 +11,8 @@ include "header.php";
 </div>
 <div id="wrapper">
     <div id="searchbox">
-        <form id="search" name="search">
-            <h2>Search for a Company by Name:</h2>
-            <input type="text" name="search" autocomplete="off" onkeyup="search_customer(this.value)">
-            <div id='result'></div>
-            <!--<div id="add_new"><a href="new_customer.php"><h2>Add New Company</h2></a> </div>-->
+        <h2>All Customers:</h2>
     </div>
-    </form>
     <div id="table">
         <?php
 
@@ -48,28 +43,8 @@ include "header.php";
                 echo '<tr><td class="edit"><a href="del_customer.php?id='.$customer['id'].'" onclick="return confirm(\'Really Delete?\');"><input type="button" value="Delete"/></a></td>';}
             echo "</tr>";
         }
-//        else {
-//            $query_result = customer_full();
-//            echo '<h2>All Customers:</h2>';
-//            while($AllCustomer = mysqli_fetch_assoc($query_result)) {
-////                echo '<table class="table table-striped dataTable default">';
-//                echo '<table class="table table-striped dataTable default">';
-//                echo '<thead>';
-//                echo "<tr><th>Name</th><th>Address1</th><th>City</th><th>Country</th></tr>";
-//                echo '</thead>';
-//                echo '<tbody>';
-//                echo '<tr><td class="edit"><a href="customer.php?id='.$AllCustomer['id'].'">' . $AllCustomer['comp_name'] . '</a></td>';
-//                echo '<td>' . $AllCustomer['address1'] . '</td>';
-//                echo '<td>' . $AllCustomer['city'] . '</td>';
-//                echo '<td>' . $AllCustomer['country'] . '</td></tr>';
-//                echo '</tbody>';
-//                echo '</table>';
-//            }
-//
-//        }
         else {
             $query_result = customer_full();
-            echo '<h2>All Customers:</h2>';
             $table = '<table class="table table-striped dataTable default">
                     <thead>
                     <tr><th>Name</th><th>Address1</th><th>City</th><th>Country</th></tr>
