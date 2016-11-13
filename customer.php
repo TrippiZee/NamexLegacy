@@ -44,25 +44,21 @@ include "header.php";
             echo "</tr>";
         }
         else {
-            $query_result = customer_full();
-            $table = '<table class="table table-striped dataTable default">
+            $customers = getAllCustomers($pdo);
+            echo '<table class="table table-striped dataTable default">
                     <thead>
                     <tr><th>Name</th><th>Address1</th><th>City</th><th>Country</th></tr>
                     </thead>
-                    <tbody>
-            ';
-            while($AllCustomer = mysqli_fetch_assoc($query_result)) {
-                $table.= '<tr><td class="edit"><a href="customer.php?id='.$AllCustomer['id'].'">' . $AllCustomer['comp_name'] . '</a></td>
-                <td>' . $AllCustomer['address1'] . '</td>
-                <td>' . $AllCustomer['city'] . '</td>
-                <td>' . $AllCustomer['country'] . '</td></tr>';
+                    <tbody>';
+                foreach($customers as $customer) {
+                    echo '<tr><td class="edit"><a href="customer.php?id='.$customer->id.'">' . $customer->comp_name . '</a></td>';
+                    echo '<td>'.$customer->address1.'</td>';
+                    echo '<td>'.$customer->city.'</td>';
+                    echo '<td>'.$customer->country.'</td></tr>';
             }
-            $table.= '</tbody></table>';
-            echo $table;
+            echo '</tbody></table>';
         }
-
         ?>
-
     </div>
 </div>
 <?php

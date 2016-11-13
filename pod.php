@@ -47,20 +47,19 @@ include "header.php";
             echo "</table>";
         }
         else {
-            $query_result = pod_All();
-            $table = '<table class="table table-striped dataTable default">
-                     <thead><tr><th>POD Number</th><th>Date</th><th>Shipper</th><th>Consignee</th></tr>
-                     </thead>
-                     <tbody>';
-            while($AllPod = mysqli_fetch_assoc($query_result)) {
-            $table .= '<tr><th>POD Number</th><th>Date</th><th>Shipper</th><th>Consignee</th></tr>
-                      <tr><td class="edit"><a href="pod.php?id='.$AllPod['id'].'">'. $AllPod['pod_no']. '</a></td>
-                      <td>'.$AllPod['date'].'</td>
-                      <td>'.$AllPod['shipper'].'</td>
-                      <td>'.$AllPod['consignee'].'</td>';
+            $pods = getAllPod($pdo);
+            echo '<table class="table table-striped dataTable default">
+                    <thead>
+                    <tr><th>POD Number</th><th>Date</th><th>Shipper</th><th>Consignee</th></tr>
+                    </thead>
+                    <tbody>';
+            foreach($pods as $pod) {
+                echo '<tr><td class="edit"><a href="pod.php?id='.$pod->id.'">' . $pod->pod_no . '</a></td>';
+                echo '<td>'.$pod->date.'</td>';
+                echo '<td>'.$pod->shipper.'</td>';
+                echo '<td>'.$pod->consignee.'</td></tr>';
             }
-            $table.= '</tbody></table>';
-            echo $table;
+            echo '</tbody></table>';
         }
         ?>
     </div>

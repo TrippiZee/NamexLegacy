@@ -38,20 +38,20 @@ include "header.php";
             echo "</table>";
         }
         else {
-            $query_result = user_All();
-            $table = '<table class="table table-striped dataTable default">
-                      <thead><tr><th>Username</th><th>Password</th><th>Name</th><th>Surname</th><th>Role</th></tr>
-                      </thead>
-                      <tbody>';
-            while($AllUser = mysqli_fetch_assoc($query_result)) {
-                $table .= '<tr><td class="edit"><a href="user.php?id='.$AllUser['id'].'">'. $AllUser['username']. '</a></td>
-                            <td>'.$AllUser['password'].'</td>
-                            <td>'.$AllUser['name'].'</td>
-                            <td>'.$AllUser['surname'].'</td>
-                            <td>'.$AllUser['role'].'</td></tr>';
+            $users = getAllUsers($pdo);
+            echo '<table class="table table-striped dataTable default">
+                    <thead>
+                    <tr><th>Username</th><th>Password</th><th>Name</th><th>Surname</th><th>Role</th></tr>
+                    </thead>
+                    <tbody>';
+            foreach($users as $user) {
+                echo '<tr><td class="edit"><a href="user.php?id='.$user->id.'">' . $user->username . '</a></td>';
+                echo '<td>'.$user->password.'</td>';
+                echo '<td>'.$user->name.'</td>';
+                echo '<td>'.$user->surname.'</td>';
+                echo '<td>'.$user->role.'</td></tr>';
             }
-            $table.= '</tbody></table>';
-            echo $table;
+            echo '</tbody></table>';
         }
         ?>
 

@@ -44,20 +44,20 @@ include "header.php";
             echo "</table>";
         }
         else {
-            $query_result = waybill_all();
-            $table = '<table class="table table-striped dataTable default">
-                             <thead><tr><th>Waybill No</th><th>Date</th><th>Manifest No</th><th>Shipper</th><th>Consignee</th></tr>
-                             </thead>
-                             <tbody>';
-            while($AllWaybill = mysqli_fetch_assoc($query_result)) {
-                $table .= '<tr><td class="edit"><a href="waybill.php?id='.$AllWaybill['id'].'">'. $AllWaybill['waybill_no']. '</a></td>
-                              <td>'.$AllWaybill['date'].'</td>
-                              <td>'.$AllWaybill['manifest_no'].'</td>
-                              <td>'.$AllWaybill['shipper'].'</td>
-                              <td>'.$AllWaybill['consignee'].'</td></tr>';
+            $waybills = getAllWaybills($pdo);
+            echo '<table class="table table-striped dataTable default">
+                    <thead>
+                    <tr><th>Waybill_No</th><th>Date</th><th>Manifest_No</th><th>Shipper</th><th>Consignee</th></tr>
+                    </thead>
+                    <tbody>';
+            foreach($waybills as $waybill) {
+                echo '<tr><td class="edit"><a href="waybill.php?id='.$waybill->id.'">' . $waybill->waybill_no . '</a></td>';
+                echo '<td>'.$waybill->date.'</td>';
+                echo '<td>'.$waybill->manifest_no.'</td>';
+                echo '<td>'.$waybill->shipper.'</td>';
+                echo '<td>'.$waybill->consignee.'</td></tr>';
             }
-            $table.= '</tbody></table>';
-            echo $table;
+            echo '</tbody></table>';
         }
         ?>
     </div>

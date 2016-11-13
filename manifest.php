@@ -119,20 +119,20 @@ include "header.php";
 
         }
          else {
-            $query_result = manifest_All();
-             $table = '<table class="table table-striped dataTable default">
-                         <thead><tr><th>Date</th><th>Manifest No</th><th>Driver</th><th>Co-Driver</th><th>Reg No</th></tr>
-                         </thead>
-                         <tbody>';
-            while($AllManifest = mysqli_fetch_assoc($query_result)) {
-                $table .= '<tr><td class="edit"><a href="manifest.php?id='.$AllManifest['id'].'">'. $AllManifest['date']. '</a></td>
-                          <td>'.$AllManifest['manifest_no'].'</td>
-                          <td>'.$AllManifest['driver'].'</td>
-                          <td>'.$AllManifest['co_driver'].'</td>
-                          <td>'.$AllManifest['reg_no'].'</td></tr>';
-            }
-             $table.= '</tbody></table>';
-             echo $table;
+             $manifests = getAllManifest($pdo);
+             echo '<table class="table table-striped dataTable default">
+                    <thead>
+                    <tr><th>Date</th><th>Manifest No</th><th>Driver</th><th>Co-Driver</th><th>Reg No</th></tr>
+                    </thead>
+                    <tbody>';
+             foreach($manifests as $manifest) {
+                 echo '<tr><td class="edit"><a href="manifest.php?id='.$manifest->id.'">' . $manifest->date . '</a></td>';
+                 echo '<td>'.$manifest->manifest_no.'</td>';
+                 echo '<td>'.$manifest->driver.'</td>';
+                 echo '<td>'.$manifest->co_driver.'</td>';
+                 echo '<td>'.$manifest->reg_no.'</td></tr>';
+             }
+             echo '</tbody></table>';
          }
         ?>
     </div>

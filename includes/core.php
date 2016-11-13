@@ -3,6 +3,14 @@ ob_start();
 session_start();
 $current_file = $_SERVER['SCRIPT_NAME'];
 
+function connectPDO(){
+    try{
+        return new PDO('mysql:host=127.0.0.1;dbname=namexapp','root','');
+    }catch (PDOException $e){
+        die($e->getMessage());
+    };
+}
+
 function logged_in() {
     if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
         return true;
@@ -54,6 +62,12 @@ function get_manifest_no ($id){
     return $manifest_no_result;
 }
 
+function getAllManifest($pdo){
+    $statement = $pdo->prepare('SELECT * FROM manifest');
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_CLASS,'Manifest');
+}
+
 function manifest_All (){
     global $connection;
 
@@ -76,6 +90,12 @@ function manifest_details ($id){
     return $manifest_details_result;
 }
 
+function getAllWaybills($pdo){
+    $statement = $pdo->prepare('SELECT * FROM manifest_details');
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_CLASS,'Waybills');
+}
+
 function waybill_all (){
     global $connection;
 
@@ -84,6 +104,12 @@ function waybill_all (){
     $manifest_details_result = mysqli_query($connection,$query);
     confirm_query($manifest_details_result);
     return $manifest_details_result;
+}
+
+function getAllCustomers($pdo){
+    $statement = $pdo->prepare('SELECT * FROM customers');
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_CLASS,'Customers');
 }
 
 function customer ($id){
@@ -119,6 +145,13 @@ function pod ($id){
     return $pod_result;
 }
 
+function getAllPod($pdo){
+    $statement = $pdo->prepare('SELECT * FROM pod');
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_CLASS,'Pod');
+}
+
+
 function pod_All (){
     global $connection;
 
@@ -140,6 +173,13 @@ function user ($id){
     confirm_query($user_result);
     return $user_result;
 }
+
+function getAllUsers($pdo){
+    $statement = $pdo->prepare('SELECT * FROM users');
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_CLASS,'User');
+}
+
 function user_All (){
     global $connection;
 
