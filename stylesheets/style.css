@@ -34,6 +34,10 @@ body {
     background-repeat: no-repeat;
 
 }
+.navbar{
+    left: 40%;
+    font-size: 1.4em;
+}
 
 #user {
     position: absolute;
@@ -241,17 +245,23 @@ body {
 
 #table {
     display: block;
-    width: 1024px;
+    /*width: 1024px;*/
     height: auto;
     margin: 0 auto;
 }
 
 #table th{
-    width: 150px;
+    width:150px;
     text-align: center;
     font-size: 1.2em;
-    /*border: 2px solid #171EE3;*/
-    background: #666666;
+    background: #666;
+}
+.table th{
+    /*width: 150px;
+    text-align: center;*/
+    font-size: 1.2em;
+    color:#fff;
+    background: #000;
 }
 
 #table td{
@@ -306,6 +316,20 @@ body {
     font-size: 1.15em;
     margin-left: 200px;
 }
+table.dataTable{
+    padding-right: 20px;
+}
+.dataTables_filter,.dataTables_paginate{
+    padding-right: 20px;
+}
+table.dataTable.table-striped > tbody > tr:nth-child(2n+1) {
+    background-color: #666;
+    /*color: #69BE28;*/
+}
+table.dataTable tbody tr a {
+    color: #69BE28;
+}
+
 .dataTables_wrapper .dataTables_paginate {
     float: right;
     text-align: right;

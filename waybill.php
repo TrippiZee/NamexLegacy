@@ -12,7 +12,7 @@ include "header.php";
     <div id="searchbox">
             <h2>All Waybills:</h2>
     </div>
-    <div id="table">
+    <div>
 
         <?php
 
@@ -29,7 +29,7 @@ include "header.php";
             $manifest = mysqli_fetch_array($manifest_no);
 
             echo '<h2>Details:</h2>';
-            echo "<table id=\"table\">";
+            echo '<table class="table dataTable default">';
             echo "<tr><th>Date</th><th>Manifest Number</th><th>Waybill Number</th><th>Shipper</th><th>Consignee</th><th>Qty</th><th>Weight</th><th>Type</th><th>Remarks</th></tr>";
             echo '<tr><td>' . $waybill['date'] . '</td>';
             echo '<td>' . $waybill['manifest_no'] . '</td>';

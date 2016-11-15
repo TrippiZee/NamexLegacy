@@ -14,7 +14,7 @@ include "header.php";
     <div id="searchbox">
             <h2>All Manifest:</h2>
     </div>
-    <div id="table">
+    <div>
 
         <?php
 
@@ -26,7 +26,7 @@ include "header.php";
 
 
             echo '<h2>Details:</h2>';
-            echo "<table>";
+            echo '<table class="table dataTable default">';
             echo "<tr><th>Date</th><th>Manifest No</th><th>Driver</th><th>Co-Driver</th><th>Reg No</th></tr>";
 
             echo '<tr><td>'. $manifest['date']. '</td>';
@@ -35,9 +35,9 @@ include "header.php";
             echo '<td>'.$manifest['co_driver'].'</td>';
             echo '<td>'.$manifest['reg_no'].'</td></tr>';
             if ($manifest['finalised'] == '0') {
-            echo '<tr><td class="edit"><a href="edit_manifest.php?id='.$manifest['id'].'"><input type="button" value="Edit"/></a></td></tr>';
+            echo '<tr><td class="edit"><a href="edit_manifest.php?id='.$manifest['id'].'"><input type="button" value="Edit"/></a></td>';
         if (getuserfield('role') == 'admin'){
-            echo '<tr><td class="edit"><a href="del_manifest.php?id='.$manifest['id'].'" onclick="return confirm(\'Really Delete?\');"><input type="button" value="Delete"/></a></td>';
+            echo '<td class="edit"><a href="del_manifest.php?id='.$manifest['id'].'" onclick="return confirm(\'Really Delete?\');"><input type="button" value="Delete"/></a></td>';
         }
             echo "</tr>";}
 
@@ -63,12 +63,15 @@ include "header.php";
             $sum_economy = economy($manifest_id);
             $economy = mysqli_fetch_array($sum_economy);
 
-            echo '<table >';
+            echo '<table class="table dataTable default" >';
             echo '<tr><td style="width:470px"></td><td><a href="new_waybill.php?id='.$manifest_id.'"><input type="button" value="Add New Waybill"/></a> </td></tr>';
             echo '<tr><br /></tr>';
             echo "</table></tr>";
+            ?>
+        <div id="table">
+            <?php
 
-            echo "<tr><table id='subtable'>";
+            echo '<tr><table id="subtable">';
             echo '<h2>Waybills:</h2>';
 
             echo "<tr><th>Waybill Number</th><th>Shipper</th><th>Consignee</th><th>Qty</th><th>Weight</th><th>Type</th><th>Remarks</th></tr>";
@@ -91,7 +94,7 @@ include "header.php";
                 echo '<td class="edit"><a href="new_pod.php?id='.$manifest_details['id'].'& shipper='.$manifest_details['shipper'].' & consignee='.$manifest_details['consignee'].'& service='.$manifest_details['type'].'"><input type="button" value="Create POD"/></a></td>';
             }
 
-            echo "<table>";
+            echo '<table>';
             echo '<h2>Seal Numbers:</h2>';
             echo "<tr><th>Seal1</th><th>Seal2</th><th>Seal3</th><th>Seal4</th></tr>";
 
@@ -116,7 +119,7 @@ include "header.php";
                 echo '<tr><br /></tr>';
                 echo '<tr><br /></tr>';
                 echo "</table>";
-
+            echo'</div>';
         }
          else {
              $manifests = getAllManifest($pdo);
@@ -126,8 +129,8 @@ include "header.php";
                     </thead>
                     <tbody>';
              foreach($manifests as $manifest) {
-                 echo '<tr><td class="edit"><a href="manifest.php?id='.$manifest->id.'">' . $manifest->date . '</a></td>';
-                 echo '<td>'.$manifest->manifest_no.'</td>';
+                 echo '<tr><td>' . $manifest->date . '</a></td>';
+                 echo '<td class="edit"><a href="manifest.php?id='.$manifest->id.'">'.$manifest->manifest_no.'</td>';
                  echo '<td>'.$manifest->driver.'</td>';
                  echo '<td>'.$manifest->co_driver.'</td>';
                  echo '<td>'.$manifest->reg_no.'</td></tr>';
