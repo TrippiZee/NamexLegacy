@@ -1,13 +1,6 @@
 <?php
 include "header.php";
 ?>
-<div id="sidemenu">
-    <ul>
-        <li><a href="waybill.php">Search</a> </li>
-        <li><a href="#">View All</a></li>
-
-    </ul>
-</div>
 <div id="wrapper">
     <div id="searchbox">
             <h2>All Waybills:</h2>

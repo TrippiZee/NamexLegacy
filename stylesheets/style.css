@@ -35,8 +35,8 @@ body {
 
 }
 .navbar{
-    left: 40%;
-    font-size: 1.4em;
+    /*left: 40%;*/
+    font-size: 1em;
 }
 
 #user {
@@ -196,11 +196,11 @@ body {
     position: fixed;
     top: 50px;
     left: 0;
-    width: 200px;
-    background: #808080
+    width: 150px;
+    background:#666666;
     overflow: hidden;
     height: 100%;
-
+    border: solid #ffffff 2px;
 }
 
 #sidemenu ul{
@@ -208,8 +208,8 @@ body {
 
 #sidemenu li{
     display: block;
-    background:url("../img/bullet.jpg") no-repeat left ;
-    padding: 10px 0 10px 40px;
+    /*background:url("../img/bullet.jpg") no-repeat left ;*/
+    padding: 10px 0 10px 10px;
     font-size: 1.2em;
 }
 
