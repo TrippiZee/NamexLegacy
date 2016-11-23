@@ -48,14 +48,6 @@ if (isset($_GET['id'])){
 
 }
 ?>
-<div id="sidemenu">
-    <ul>
-        <li><a href="waybill.php">Search</a> </li>
-        <li><a href="new_waybill.php">Add New</a></li>
-        <li><a href="#">View All</a></li>
-
-    </ul>
-</div>
 <div id="wrapper">
 <div id="searchbox">
     <form id="search" name="search">

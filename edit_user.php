@@ -40,14 +40,6 @@ if (isset($_GET['id'])){
     $user_role = user_role();
 }
 ?>
-<div id="sidemenu">
-    <ul>
-        <li><a href="user.php">Search</a> </li>
-        <li><a href="new_user.php">Add New</a></li>
-        <li><a href="#">View All</a></li>
-
-    </ul>
-</div>
 <div id="wrapper">
 <div id="searchbox">
     <form id="search" name="search">

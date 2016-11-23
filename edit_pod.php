@@ -57,14 +57,6 @@ $services = services();
 
 
 ?>
-<div id="sidemenu">
-    <ul>
-        <li><a href="pod.php">Search</a> </li>
-        <li><a href="waybill.php">Add New</a></li>
-        <li><a href="#">View All</a></li>
-
-    </ul>
-</div>
 <div id="wrapper">
 <div id="searchbox">
     <form id="search" name="search">

@@ -48,14 +48,6 @@ $edit = customer($id);
 $edit_row = mysqli_fetch_array($edit);
 }
 ?>
-<div id="sidemenu">
-    <ul>
-        <li><a href="customer.php">Search</a> </li>
-        <li><a href="new_customer.php">Add New</a></li>
-        <li><a href="#">View All</a></li>
-
-    </ul>
-</div>
 <div id="wrapper">
 
 <div id="searchbox">

@@ -1,12 +1,13 @@
 <?php
 require ("includes/core.php");
 require ("includes/db_connection.php");
+require ("includes/models/Connection.php");
 require ("includes/models/Customers.php");
 require ("includes/models/Waybills.php");
 require ("includes/models/Manifest.php");
 require ("includes/models/Pod.php");
 require ("includes/models/User.php");
-$pdo = connectPDO();
+$pdo = Connection::connect();
 ?>
 <!DOCTYPE html>
 <html>

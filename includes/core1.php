@@ -3,14 +3,6 @@ ob_start();
 session_start();
 $current_file = $_SERVER['SCRIPT_NAME'];
 
-function connectPDO(){
-    try{
-        return new PDO('mysql:host=sql26.jnb1.host-h.net;dbname=Namibmhz_app1','Namibmhz_app1','Nam1b123App');
-    }catch (PDOException $e){
-        die($e->getMessage());
-    };
-}
-
 function logged_in() {
     if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
         return true;

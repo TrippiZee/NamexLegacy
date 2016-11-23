@@ -38,14 +38,6 @@ if (isset($_GET['id'])){
     $manifest = mysqli_fetch_array($query);
 }
 ?>
-<div id="sidemenu">
-    <ul>
-        <li><a href="manifest.php">Search</a> </li>
-        <li><a href="new_manifest.php">Add New</a></li>
-        <li><a href="#">View All</a></li>
-
-    </ul>
-</div>
 <div id="wrapper">
 <div id="searchbox">
     <form id="search" name="search">
