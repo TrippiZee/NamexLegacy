@@ -6,6 +6,7 @@
                 <li><a href="manifest.php">Manifest</a></li>
                 <li><a href="waybill.php">Waybill</a></li>
                 <li><a href="pod.php">POD</a></li>
+                <li><a href="tracking.php">Tracking</a></li>
                 <?php
                 if (getuserfield('role') == 'admin'){
                     echo '<li><a href="reports.php">Reports</a></li>';
