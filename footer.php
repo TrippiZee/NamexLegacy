@@ -3,8 +3,9 @@
 ?>
 
 </div>
-<script src="scripts/jquery-3.1.1.min.js"></script>
 <!--<script src="scripts/jquery.min.js"></script>-->
+<!--<script src="scripts/jquery-3.1.1.min.js"></script>-->
+<script src="scripts/jquery.min.js"></script>
 <script src="scripts/functions.js"></script>
 <script src="scripts/bootstrap.min.js"></script>
 <script src="scripts/dataTables.bootstrap.min.js"></script>
@@ -18,6 +19,15 @@
             bStateSave: true,
             stateSave:true,
             sPaginationType: "full_numbers"
+        });
+
+        $(".waybill").dataTable({
+            "processing": true,
+            "serverSide":true,
+            "ajax":{
+                url:"waybillDataTables.php",
+                type:"post"
+            }
         });
     });
 </script>
