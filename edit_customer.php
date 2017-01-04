@@ -11,6 +11,7 @@ if (isset($_POST['submit'])) {
     $address2 = strtoupper($_POST['address2']);
     $city = strtoupper($_POST['city']);
     $country = strtoupper($_POST['country']);
+    $accno = $_POST['accno'];
     $codet = $_POST['codet'];
     $tel = $_POST['telno'];
     $codef = $_POST['codef'];
@@ -20,6 +21,7 @@ if (isset($_POST['submit'])) {
 
     $update_query  = "UPDATE customers SET ";
     $update_query .= "comp_name = '{$comp_name}', ";
+    $update_query .= "acc_no = '{$accno}', ";
     $update_query .= "address1 = '{$address1}', ";
     $update_query .= "address2 = '{$address2}', ";
     $update_query .= "city = '{$city}', ";
@@ -60,10 +62,11 @@ $edit_row = mysqli_fetch_array($edit);
     <form action="#" method="post">
         <table id="table">
             <tr>
-                <th>Company Name</th><th>Address</th><th>Address2</th><th>City</th><th>Country</th>
+                <th>Company Name</th><th>Account Number</th><th>Address</th><th>Address2</th><th>City</th><th>Country</th>
             </tr>
             <tr>
                 <td><input type="text" name="name" value="<?php echo htmlentities($edit_row['comp_name']); ?>" /></td>
+                <td><input type="text" name="accno" value="<?php echo htmlentities($edit_row['acc_no']); ?>" /></td>
                 <td><input type="text" name="address1" value="<?php echo htmlentities($edit_row['address1']); ?>" /></td>
                 <td><input type="text" name="address2" value="<?php echo htmlentities($edit_row['address2']); ?>" /></td>
                 <td><input type="text" name="city" value="<?php echo htmlentities($edit_row['city']); ?>" /></td>

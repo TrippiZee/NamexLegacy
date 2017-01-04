@@ -54,21 +54,16 @@ function get_manifest_no ($id){
     return $manifest_no_result;
 }
 
-function getAllManifest($pdo){
-    $statement = $pdo->prepare('SELECT * FROM manifest');
+function getAllManifest($pdo,$columns,$request,$searchTerm){
+    $statement = $pdo->prepare('SELECT * FROM manifest WHERE 1 AND ( date LIKE "'.$searchTerm.'%" OR manifest_no LIKE "'.$searchTerm.'%" OR driver LIKE "'.$searchTerm.'%" OR co_driver LIKE "'.$searchTerm.'%" OR reg_no LIKE "'.$searchTerm.'%" ) ORDER BY '.$columns[$request['order'][0]['column']].' '.$request['order'][0]['dir'].' LIMIT '.$request['start'].' ,'.$request['length'].' ');
+
     $statement->execute();
-    return $statement->fetchAll(PDO::FETCH_CLASS,'Manifest');
-}
 
-function manifest_All (){
-    global $connection;
+    $filter = $pdo->prepare('SELECT * FROM manifest WHERE 1 AND ( date LIKE "'.$searchTerm.'%" OR manifest_no LIKE "'.$searchTerm.'%" OR driver LIKE "'.$searchTerm.'%" OR co_driver LIKE "'.$searchTerm.'%" OR reg_no LIKE "'.$searchTerm.'%" )');
 
-    $query = 'SELECT * ';
-    $query .= 'FROM manifest ';
-    $query .= 'ORDER BY date DESC ';
-    $manifest_details_result = mysqli_query($connection,$query);
-    confirm_query($manifest_details_result);
-    return $manifest_details_result;
+    $filter->execute();
+
+    return array($statement->fetchAll(PDO::FETCH_CLASS,'Manifest'),$filter->rowCount());
 }
 
 function manifest_details ($id){
@@ -82,7 +77,7 @@ function manifest_details ($id){
     return $manifest_details_result;
 }
 
-function getAllWaybills($pdo,$columns,$request = NULL,$searchTerm = NULL){
+function getAllWaybills($pdo,$columns,$request,$searchTerm){
     $statement = $pdo->prepare('SELECT * FROM manifest_details WHERE 1 AND ( waybill_no LIKE "'.$searchTerm.'%" OR date LIKE "'.$searchTerm.'%" OR manifest_no LIKE "'.$searchTerm.'%" OR shipper LIKE "'.$searchTerm.'%" OR consignee LIKE "'.$searchTerm.'%" ) ORDER BY '.$columns[$request['order'][0]['column']].' '.$request['order'][0]['dir'].' LIMIT '.$request['start'].' ,'.$request['length'].' ');
 
     $statement->execute();
@@ -94,20 +89,16 @@ function getAllWaybills($pdo,$columns,$request = NULL,$searchTerm = NULL){
     return array($statement->fetchAll(PDO::FETCH_CLASS,'Waybills'),$filter->rowCount());
 }
 
-function waybill_all (){
-    global $connection;
+function getAllCustomers($pdo,$columns,$request,$searchTerm){
+    $statement = $pdo->prepare('SELECT * FROM customers WHERE 1 AND ( comp_name LIKE "'.$searchTerm.'%" OR acc_no LIKE "'.$searchTerm.'%" OR address1 LIKE "'.$searchTerm.'%" OR city LIKE "'.$searchTerm.'%" OR country LIKE "'.$searchTerm.'%" ) ORDER BY '.$columns[$request['order'][0]['column']].' '.$request['order'][0]['dir'].' LIMIT '.$request['start'].' ,'.$request['length'].' ');
 
-    $query = 'SELECT * ';
-    $query .= 'FROM manifest_details ';
-    $manifest_details_result = mysqli_query($connection,$query);
-    confirm_query($manifest_details_result);
-    return $manifest_details_result;
-}
-
-function getAllCustomers($pdo){
-    $statement = $pdo->prepare('SELECT * FROM customers');
     $statement->execute();
-    return $statement->fetchAll(PDO::FETCH_CLASS,'Customers');
+
+    $filter = $pdo->prepare('SELECT * FROM customers WHERE 1 AND ( comp_name LIKE "'.$searchTerm.'%" OR acc_no LIKE "'.$searchTerm.'%" OR address1 LIKE "'.$searchTerm.'%" OR city LIKE "'.$searchTerm.'%" OR country LIKE "'.$searchTerm.'%" )');
+
+    $filter->execute();
+
+    return array($statement->fetchAll(PDO::FETCH_CLASS,'Customers'),$filter->rowCount());
 }
 
 function customer ($id){
@@ -116,17 +107,6 @@ function customer ($id){
     $query = 'SELECT * ';
     $query .= 'FROM customers ';
     $query .= "WHERE id = {$id}";
-    $customer_result = mysqli_query($connection,$query);
-    confirm_query($customer_result);
-    return $customer_result;
-}
-
-function customer_full (){
-    global $connection;
-
-    $query = 'SELECT * ';
-    $query .= 'FROM customers ';
-    $query .= 'ORDER BY comp_name ';
     $customer_result = mysqli_query($connection,$query);
     confirm_query($customer_result);
     return $customer_result;
@@ -143,22 +123,16 @@ function pod ($id){
     return $pod_result;
 }
 
-function getAllPod($pdo){
-    $statement = $pdo->prepare('SELECT * FROM pod');
+function getAllPod($pdo,$columns,$request,$searchTerm){
+    $statement = $pdo->prepare('SELECT * FROM pod WHERE 1 AND ( pod_no LIKE "'.$searchTerm.'%" OR date LIKE "'.$searchTerm.'%" OR shipper LIKE "'.$searchTerm.'%" OR consignee LIKE "'.$searchTerm.'%" ) ORDER BY '.$columns[$request['order'][0]['column']].' '.$request['order'][0]['dir'].' LIMIT '.$request['start'].' ,'.$request['length'].' ');
+
     $statement->execute();
-    return $statement->fetchAll(PDO::FETCH_CLASS,'Pod');
-}
 
+    $filter = $pdo->prepare('SELECT * FROM pod WHERE 1 AND ( pod_no LIKE "'.$searchTerm.'%" OR date LIKE "'.$searchTerm.'%" OR shipper LIKE "'.$searchTerm.'%" OR consignee LIKE "'.$searchTerm.'%" )');
 
-function pod_All (){
-    global $connection;
+    $filter->execute();
 
-    $query = 'SELECT * ';
-    $query .= 'FROM pod ';
-    $query .= 'ORDER BY date ';
-    $pod_result = mysqli_query($connection,$query);
-    confirm_query($pod_result);
-    return $pod_result;
+    return array($statement->fetchAll(PDO::FETCH_CLASS,'Pod'),$filter->rowCount());
 }
 
 function user ($id){
@@ -178,61 +152,6 @@ function getAllUsers($pdo){
     return $statement->fetchAll(PDO::FETCH_CLASS,'User');
 }
 
-function user_All (){
-    global $connection;
-
-    $query = 'SELECT * ';
-    $query .= 'FROM users ';
-    $query .= 'ORDER BY name';
-    $user_result = mysqli_query($connection,$query);
-    confirm_query($user_result);
-    return $user_result;
-}
-
-function customer_search ($search_term){
-    global $connection;
-
-    $query = "SELECT * FROM customers WHERE comp_name LIKE '$search_term%'";
-    $customer_result = mysqli_query($connection,$query);
-    confirm_query($customer_result);
-    return $customer_result;
-}
-
-function waybill_search ($search_term){
-    global $connection;
-
-    $query = "SELECT * FROM manifest_details WHERE waybill_no LIKE '$search_term%'";
-    $waybill_result = mysqli_query($connection,$query);
-    confirm_query($waybill_result);
-    return $waybill_result;
-}
-
-function manifest_search ($search_term){
-    global $connection;
-
-    $query = "SELECT * FROM manifest WHERE manifest_no LIKE '$search_term%'";
-    $manifest_result = mysqli_query($connection,$query);
-    confirm_query($manifest_result);
-    return $manifest_result;
-}
-
-function pod_search ($search_term){
-    global $connection;
-
-    $query = "SELECT * FROM pod WHERE pod_no LIKE '$search_term%'";
-    $pod_result = mysqli_query($connection,$query);
-    confirm_query($pod_result);
-    return $pod_result;
-}
-
-function user_search ($search_term){
-    global $connection;
-
-    $query = "SELECT * FROM users WHERE username LIKE '$search_term%'";
-    $user_result = mysqli_query($connection,$query);
-    confirm_query($user_result);
-    return $user_result;
-}
  function user_role() {
      global $connection;
 

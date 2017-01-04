@@ -19,8 +19,9 @@ $pdo = Connection::connect();
 
 </head>
 <body>
-<div id="container">
-    <div id="head">
+<div id="container-fluid">
+    <div id="head" class="row">
+        <div class="col-sm-12">
         <div id="logo"></div>
 <!--        <nav class="navbar">-->
 <!--            <ul class="nav navbar-nav">-->
@@ -52,6 +53,7 @@ $pdo = Connection::connect();
 
         <div id="user">Welcome: <?php echo getuserfield('name').' '.getuserfield('surname') ?> <br/>
             <a href="logout.php">Logout</a>
+        </div>
         </div>
     </div>
 <?php

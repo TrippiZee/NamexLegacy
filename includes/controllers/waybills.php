@@ -1,8 +1,8 @@
 <?php
 
-require ("includes/models/Connection.php");
-require ("includes/models/Waybills.php");
-require ("includes/core.php");
+require("../models/Connection.php");
+require("../models/Waybills.php");
+require("../core.php");
 
 $pdo = Connection::connect();
 
@@ -17,9 +17,7 @@ $columns = array(
 );
 $searchTerm = $_REQUEST['search']['value'];
 
-
 $totalRows = $pdo->query('select count(*) from manifest_details')->fetchColumn();
-//$totalFiltered = $totalRows;
 list($tableData,$rowCount) = getAllWaybills($pdo,$columns,$tableRequest,$searchTerm);
 
 $waybills = array();

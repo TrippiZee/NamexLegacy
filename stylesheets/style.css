@@ -1,4 +1,4 @@
-html, {
+html {
     height: 100%;
     margin: 0;
 }
@@ -16,9 +16,9 @@ body {
 }
 
 #head {
-    position: fixed;
-    top: 0;
-    width: 100%;
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*width: 100%;*/
     height: 50px;
     background: #666666;
     color: #fff;
@@ -193,10 +193,10 @@ body {
 }
 
 #sidemenu {
-    position: fixed;
+    /*position: fixed;*/
     top: 50px;
     left: 0;
-    width: 150px;
+    /*width: 150px;*/
     background:#666666;
     overflow: hidden;
     height: 100%;
@@ -316,6 +316,25 @@ body {
     font-size: 1.15em;
     margin-left: 200px;
 }
+
+.db-top{
+    background-color: #003eff;
+}
+.db-top-left{
+    background-color: #00bdce;
+}
+.db-top-right{
+    background-color: #122b40;
+}
+.db-bottom{
+}
+.db-bottom-left{
+    background-color: #5f3f3f;
+}
+.db-bottom-right{
+    background-color: #69BE28;
+}
+
 table.dataTable{
     padding-right: 20px;
 }

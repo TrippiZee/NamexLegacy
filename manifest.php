@@ -113,20 +113,10 @@ include "header.php";
             echo'</div>';
         }
          else {
-             $manifests = getAllManifest($pdo);
-             echo '<table class="table table-striped dataTable default">
+             echo '<table class="table table-striped dataTable manifests">
                     <thead>
                     <tr><th>Date</th><th>Manifest No</th><th>Driver</th><th>Co-Driver</th><th>Reg No</th></tr>
-                    </thead>
-                    <tbody>';
-             foreach($manifests as $manifest) {
-                 echo '<tr><td>' . $manifest->date . '</a></td>';
-                 echo '<td class="edit"><a href="manifest.php?id='.$manifest->id.'">'.$manifest->manifest_no.'</td>';
-                 echo '<td>'.$manifest->driver.'</td>';
-                 echo '<td>'.$manifest->co_driver.'</td>';
-                 echo '<td>'.$manifest->reg_no.'</td></tr>';
-             }
-             echo '</tbody></table>';
+                    </thead></table>';
          }
         ?>
     </div>

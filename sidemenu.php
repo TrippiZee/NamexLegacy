@@ -1,5 +1,6 @@
 <?php ?>
-<div id="sidemenu">
+<div class="row">
+<div id="sidemenu" class="col-sm-1">
 <nav class="navbar">
             <ul class="nav navbar-nav">
                 <li><a href="customer.php">Customer</a> </li>
@@ -17,3 +18,4 @@
 </ul>
 </nav>
 </div>
+<!--</div>-->

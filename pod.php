@@ -38,19 +38,10 @@ include "header.php";
             echo "</table>";
         }
         else {
-            $pods = getAllPod($pdo);
-            echo '<table class="table table-striped dataTable default">
+            echo '<table class="table table-striped dataTable pods">
                     <thead>
                     <tr><th>POD Number</th><th>Date</th><th>Shipper</th><th>Consignee</th></tr>
-                    </thead>
-                    <tbody>';
-            foreach($pods as $pod) {
-                echo '<tr><td class="edit"><a href="pod.php?id='.$pod->id.'">' . $pod->pod_no . '</a></td>';
-                echo '<td>'.$pod->date.'</td>';
-                echo '<td>'.$pod->shipper.'</td>';
-                echo '<td>'.$pod->consignee.'</td></tr>';
-            }
-            echo '</tbody></table>';
+                    </thead></table>';
         }
         ?>
     </div>

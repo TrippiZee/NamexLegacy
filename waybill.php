@@ -37,21 +37,10 @@ include "header.php";
             echo "</table>";
         }
         else {
-//            $waybills = getAllWaybills($pdo);
-            echo '<table class="table table-striped dataTable waybill">
+            echo '<table class="table table-striped dataTable waybills">
                     <thead>
                     <tr><th>Waybill_No</th><th>Date</th><th>Manifest_No</th><th>Shipper</th><th>Consignee</th></tr>
-                    </thead>
-<!--                     <tbody>';
-//            foreach($waybills as $waybill) {
-//                echo '<tr><td class="edit"><a href="waybill.php?id='.$waybill->id.'">' . $waybill->waybill_no . '</a></td>';
-//                echo '<td>'.$waybill->date.'</td>';
-//                echo '<td>'.$waybill->manifest_no.'</td>';
-//                echo '<td>'.$waybill->shipper.'</td>';
-//                echo '<td>'.$waybill->consignee.'</td></tr>';
-//            }
-//            echo '</tbody></table>';
-            echo '</table>';
+                    </thead></table>';
         }
         ?>
     </div>

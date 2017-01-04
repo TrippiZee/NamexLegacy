@@ -7,6 +7,8 @@ class Customers{
 
     public $comp_name;
 
+    public $acc_no;
+
     public $address1;
 
     public $address2;
