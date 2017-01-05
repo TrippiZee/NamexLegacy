@@ -3,6 +3,7 @@
 <div id="sidemenu" class="col-sm-1">
 <nav class="navbar">
             <ul class="nav navbar-nav">
+                <li><a href="dashboard.php">Home</a> </li>
                 <li><a href="customer.php">Customer</a> </li>
                 <li><a href="manifest.php">Manifest</a></li>
                 <li><a href="waybill.php">Waybill</a></li>

@@ -1,10 +1,6 @@
 <?php
 
-require("../models/Connection.php");
-require("../models/Manifest.php");
-require("../core.php");
-
-$pdo = Connection::connect();
+require("../bootstrapper.php");
 
 $tableRequest = $_REQUEST;
 

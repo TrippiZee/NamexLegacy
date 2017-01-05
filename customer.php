@@ -1,11 +1,14 @@
 <?php
 include "header.php";
 ?>
-<div id="wrapper">
-    <div id="searchbox">
-        <h2>All Customers:</h2>
+<div class="col-sm-11 main">
+    <div class="row">
+        <div class="col-sm-2 col-sm-offset-5">
+            <h2>All Customers:</h2>
+        </div>
     </div>
-    <div>
+    <div class="row">
+        <div class="col-sm-12">
         <?php
 
         $id = '';
@@ -44,6 +47,7 @@ include "header.php";
                     </thead></table>';
         }
         ?>
+        </div>
     </div>
 </div>
 <?php

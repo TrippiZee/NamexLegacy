@@ -1,12 +1,14 @@
 <?php
 include "header.php";
 ?>
-<div id="wrapper">
-    <div id="searchbox">
-        <form id="search" name="search">
+<div class="col-sm-11 main">
+    <div class="row">
+        <div class="col-sm-2 col-sm-offset-5">
             <h2>All POD:</h2>
+        </div>
     </div>
-    <div>
+    <div class="row">
+        <div class="col-sm-12">
 
         <?php
 
@@ -44,6 +46,7 @@ include "header.php";
                     </thead></table>';
         }
         ?>
+        </div>
     </div>
 </div>
 <?php

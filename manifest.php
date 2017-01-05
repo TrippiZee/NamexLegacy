@@ -1,11 +1,14 @@
 <?php
 include "header.php";
 ?>
-<div id="wrapper">
-    <div id="searchbox">
+<div class="col-sm-11 main">
+    <div class="row">
+        <div class="col-sm-2 col-sm-offset-5">
             <h2>All Manifest:</h2>
     </div>
-    <div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
 
         <?php
 
@@ -119,6 +122,7 @@ include "header.php";
                     </thead></table>';
          }
         ?>
+        </div>
     </div>
 </div>
 <?php

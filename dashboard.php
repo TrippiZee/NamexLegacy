@@ -2,9 +2,14 @@
 
 include "header.php";
 ?>
-<div class="col-sm-11">
-    <div class="row db-top">
-        <div class="col-sm-6 db-top-left">
+<div class="col-sm-11 main">
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <h2>Namibia Express Quickstart:</h2>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-sm-6 ">
             <h1>Top Left</h1>
         </div>
         <div class="col-sm-6 db-top-right">
