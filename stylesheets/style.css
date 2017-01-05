@@ -204,7 +204,7 @@ body {
     position: fixed;
     top: 50px;
     left: 0;
-    /*width: 150px;*/
+    width: 105px;
     background:#666666;
     overflow: hidden;
     height: 100%;
@@ -212,11 +212,17 @@ body {
 }
 
 #sidemenu ul{
+    /*width: 100px;*/
+    /*background:#666666;*/
+    /*height: 100%;*/
+
 }
 
 #sidemenu li{
     display: block;
     /*background:url("../img/bullet.jpg") no-repeat left ;*/
+    width: 105px;
+
     padding: 10px 0 10px 0;
     font-size: 1.2em;
 }

@@ -10,7 +10,8 @@ include "header.php";
     </div>
     <div class="row ">
         <div class="col-sm-6 ">
-            <h1>Top Left</h1>
+            <h1>New:</h1>
+            <button></button>
         </div>
         <div class="col-sm-6 db-top-right">
             <h1>Top Right</h1>
