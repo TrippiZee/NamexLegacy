@@ -332,21 +332,21 @@ body {
 }
 
 .db-top{
-    background-color: #003eff;
+
 }
 .db-top-left{
-    background-color: #00bdce;
+    border: 2px solid gold
 }
 .db-top-right{
-    background-color: #122b40;
+    border: 2px solid GREEN
 }
 .db-bottom{
 }
 .db-bottom-left{
-    background-color: #5f3f3f;
+    border: 2px solid blue
 }
 .db-bottom-right{
-    background-color: #69BE28;
+    border: 2px solid red
 }
 
 table.dataTable{

@@ -3,6 +3,14 @@ include "header.php";
 ?>
 <div class="col-sm-11 main">
     <div class="row">
+        <div class="col-sm-3">
+            <br>
+            <button href="#addNewCustomer" data-toggle="modal"  class="btn btn-success col-xs-12 btn-narrow">Add New Customer</button>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row">
         <div class="col-sm-2 col-sm-offset-5">
             <h2>All Customers:</h2>
         </div>
