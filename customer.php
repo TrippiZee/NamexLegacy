@@ -5,17 +5,11 @@ include "header.php";
     <div class="row">
         <div class="col-sm-3">
             <br>
-<!--            <a href="new_customer.php"><button data-toggle="modal"  class="btn btn-success col-xs-12 btn-narrow">Add New Customer</button></a>-->
             <button data-toggle="modal" data-target="#addCustomer" class="btn btn-success col-xs-12 btn-narrow">Add New Customer</button>
         </div>
     </div>
     <hr>
 
-<!--    <div class="row">-->
-<!--        <div class="col-sm-2 ">-->
-<!--            <h2>All Customers:</h2>-->
-<!--        </div>-->
-<!--    </div>-->
     <div class="row">
         <div class="col-sm-12">
         <?php
