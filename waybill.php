@@ -135,7 +135,7 @@ include "header.php";
                                 <div class="form-group row">
                                     <label for="deldate" class="col-sm-2 col-form-label">Delivery Date</label>
                                     <div class="col-sm-4">
-                                        <input type="date" class="form-control" name="deldate" value="">
+                                        <input type="text" class="form-control date" name="deldate" value="">
                                     </div>
                                     <label for="signed" class="col-sm-2 col-form-label">Signed</label>
                                     <div class="col-sm-4">
@@ -145,7 +145,7 @@ include "header.php";
                                 <div class="form-group row">
                                     <label for="time" class="col-sm-2 col-form-label">Time</label>
                                     <div class="col-sm-4">
-                                        <input type="time" class="form-control" name="time" value="">
+                                        <input type="text" class="form-control time" name="time" value="">
                                     </div>
                                 </div>
                         </div>

@@ -8,6 +8,7 @@
 <script src="scripts/dataTables.editor.min.js"></script>
 <script src="scripts/jquery.dataTables.min.js"></script>
 <script src="scripts/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="scripts/jquery-ui-timepicker-addon.js"></script>
 <script src="scripts/functions.js"></script>
 
 <script type="text/javascript">

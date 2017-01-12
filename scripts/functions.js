@@ -31,6 +31,9 @@ $(document).ready(function() {
             type:"post"
         }
     });
-
+    $(".date").datepicker({
+        dateFormat:"yy-mm-dd"
+    });
+    $(".time").timepicker();
 
 });
