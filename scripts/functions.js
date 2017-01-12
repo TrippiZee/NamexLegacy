@@ -3,7 +3,7 @@ $(document).ready(function() {
         "processing": true,
         "serverSide":true,
         "ajax":{
-            url:"includes/controllers/customers.php",
+            url:"../controllers/customers.php",
             type:"post"
         }
     });
@@ -11,7 +11,7 @@ $(document).ready(function() {
         "processing": true,
         "serverSide":true,
         "ajax":{
-            url:"includes/controllers/manifests.php",
+            url:"../controllers/manifests.php",
             type:"post"
         }
     });
@@ -19,7 +19,7 @@ $(document).ready(function() {
         "processing": true,
         "serverSide":true,
         "ajax":{
-            url:"includes/controllers/waybills.php",
+            url:"../controllers/waybills.php",
             type:"post"
         }
     });
@@ -27,7 +27,7 @@ $(document).ready(function() {
         "processing": true,
         "serverSide":true,
         "ajax":{
-            url:"includes/controllers/pods.php",
+            url:"../controllers/pods.php",
             type:"post"
         }
     });

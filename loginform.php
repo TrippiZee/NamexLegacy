@@ -16,7 +16,7 @@
             } else if($query_num_rows ==1) {
                     $id = $query_run->fetch_assoc()['id'];
                     $_SESSION['user_id'] = $id;
-                redirect_to('customer.php');
+                redirect_to('includes/views/customer.php');
                 }
 
         }

@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
 
 <div id="sidemenu">
     <ul>
-        <li><a href="waybill.php">Search</a> </li>
+        <li><a href="includes/views/waybill.php">Search</a> </li>
         <li><a href="new_waybill.php">Add New</a></li>
         <li><a href="#">View All</a></li>
 

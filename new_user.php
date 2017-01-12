@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
 ?>
 <div id="sidemenu">
     <ul>
-        <li><a href="user.php">Search</a> </li>
+        <li><a href="includes/views/user.php">Search</a> </li>
         <li><a href="new_user.php">Add New</a></li>
         <li><a href="#">View All</a></li>
 

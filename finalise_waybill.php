@@ -20,7 +20,7 @@ if (isset ($_GET['id'])){
     }
 
 } else {
-    echo "Fatal error, Click to go back: <a href='manifest.php'><input type='button' value='BACK!'/></a>";
+    echo "Fatal error, Click to go back: <a href='includes/views/manifest.php'><input type='button' value='BACK!'/></a>";
 }
 
 
