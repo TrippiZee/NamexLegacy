@@ -1,5 +1,5 @@
 <?php
-
+include "modals.php";
 ?>
 <!--<script src="scripts/jquery-3.1.1.min.js"></script>-->
 <script src="../../scripts/jquery.min.js"></script>
