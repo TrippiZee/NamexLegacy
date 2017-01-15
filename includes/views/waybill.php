@@ -46,9 +46,9 @@ include "layout/header.php";
             $id = $_GET['id'];
 
             $query_result = manifest_details($id);
-            $waybill = mysqli_fetch_array($query_result);
+            $data = mysqli_fetch_array($query_result);
 
-            $manifest_id = $waybill['manifest_no'];
+            $manifest_id = $data['manifest_no'];
             $manifest_no = get_manifest_no($manifest_id);
 
             $manifest = mysqli_fetch_array($manifest_no);
@@ -56,15 +56,15 @@ include "layout/header.php";
             echo '<h2>Details:</h2>';
             echo '<table class="table dataTable default">';
             echo "<tr><th>Date</th><th>Manifest Number</th><th>Waybill Number</th><th>Shipper</th><th>Consignee</th><th>Qty</th><th>Weight</th><th>Type</th><th>Remarks</th></tr>";
-            echo '<tr><td>' . $waybill['date'] . '</td>';
-            echo '<td>' . $waybill['manifest_no'] . '</td>';
-            echo '<td>' . $waybill['waybill_no'] . '</td>';
-            echo '<td>' . $waybill['shipper'] . '</td>';
-            echo '<td>' . $waybill['consignee'] . '</td>';
-            echo '<td>' . $waybill['qty'] . '</td>';
-            echo '<td>' . $waybill['weight'] . '</td>';
-            echo '<td>' . $waybill['type'] . '</td>';
-            echo '<td>' . $waybill['remarks'] . '</td></tr>';
+            echo '<tr><td>' . $data['date'] . '</td>';
+            echo '<td>' . $data['manifest_no'] . '</td>';
+            echo '<td>' . $data['waybill_no'] . '</td>';
+            echo '<td>' . $data['shipper'] . '</td>';
+            echo '<td>' . $data['consignee'] . '</td>';
+            echo '<td>' . $data['qty'] . '</td>';
+            echo '<td>' . $data['weight'] . '</td>';
+            echo '<td>' . $data['type'] . '</td>';
+            echo '<td>' . $data['remarks'] . '</td></tr>';
 //            echo '<tr><td class="edit"><a href="new_pod.php?id=' . $waybill['id'] . '& shipper=' . $waybill['shipper'] . ' & consignee=' . $waybill['consignee'] . '& service=' . $waybill['type'] . '"><input type="button" value="Create POD"/></a></td></tr>';
             echo '<tr><td class="edit"><button data-toggle="modal" data-target="#createPOD" class="btn btn-success col-xs-12 btn-narrow">Create POD</button></td></tr>';
             echo "</table>";

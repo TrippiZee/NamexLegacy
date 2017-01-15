@@ -65,30 +65,31 @@ include "layout/header.php";
         <div id="table">
             <?php
 
-            echo '<tr><table id="subtable">';
+            echo '<tr><table class="table dataTable default">';
             echo '<h2>Waybills:</h2>';
 
             echo "<tr><th>Waybill Number</th><th>Shipper</th><th>Consignee</th><th>Qty</th><th>Weight</th><th>Type</th><th>Remarks</th></tr>";
-            while ($manifest_details = mysqli_fetch_assoc($manifest_query_details)) {
+            while ($data = mysqli_fetch_assoc($manifest_query_details)) {
 
-                echo '<tr><td>'. $manifest_details['waybill_no']. '</td>';
-                echo '<td>'.$manifest_details['shipper'].'</td>';
-                echo '<td>'.$manifest_details['consignee'].'</td>';
-                echo '<td>'.$manifest_details['qty'].'</td>';
-                echo '<td>'.$manifest_details['weight'].'</td>';
-                echo '<td>'.$manifest_details['type'].'</td>';
-                echo '<td>'.$manifest_details['remarks'].'</td></tr>';
-                echo '<tr><td class="edit"><a href="../../edit_waybill.php?id=' .$manifest_details['id'].'& shipper='.$manifest_details['shipper'].'& type='.$manifest_details['type'].'"><input type="button" value="Edit"/></a></td>';
+                echo '<tr><td>'. $data['waybill_no']. '</td>';
+                echo '<td>'.$data['shipper'].'</td>';
+                echo '<td>'.$data['consignee'].'</td>';
+                echo '<td>'.$data['qty'].'</td>';
+                echo '<td>'.$data['weight'].'</td>';
+                echo '<td>'.$data['type'].'</td>';
+                echo '<td>'.$data['remarks'].'</td>';
+                echo '<td style="visibility: hidden">'.$data['date'].'</td></tr>';
+                echo '<tr><td class="edit"><a href="../../edit_waybill.php?id=' .$data['id'].'& shipper='.$data['shipper'].'& type='.$data['type'].'"><input type="button" value="Edit"/></a></td>';
                 if (getuserfield('role') == 'admin'){
-                    echo '<td class="edit"><a href="../../del_waybill.php?id=' .$manifest_details['id'].'" onclick="return confirm(\'Really Delete?\');"><input type="button" value="Delete"/></a></td>';}
+                    echo '<td class="edit"><a href="../../del_waybill.php?id=' .$data['id'].'" onclick="return confirm(\'Really Delete?\');"><input type="button" value="Delete"/></a></td>';}
                 echo '<td></td>';
                 echo '<td></td>';
                 echo '<td></td>';
                 echo '<td></td>';
-                echo '<td class="edit"><a href="../../new_pod.php?id=' .$manifest_details['id'].'& shipper='.$manifest_details['shipper'].' & consignee='.$manifest_details['consignee'].'& service='.$manifest_details['type'].'"><input type="button" value="Create POD"/></a></td>';
+                echo '<tr><td class="edit"><button data-toggle="modal" data-target="#createPOD" class="btn btn-success col-xs-12 btn-narrow">Create POD</button></td></tr>';
             }
 
-            echo '<table>';
+            echo '<table class="table dataTable default">';
             echo '<h2>Seal Numbers:</h2>';
             echo "<tr><th>Seal1</th><th>Seal2</th><th>Seal3</th><th>Seal4</th></tr>";
 
@@ -100,7 +101,7 @@ include "layout/header.php";
 
             echo '</table>';
 
-        echo '<table>';
+        echo '<table class="table dataTable default">';
                 echo '<tr><th>Total Quantity</th><th>Total Weight</th><th>Overnight</th><th>Budget</th><th>Consolidated</th><th>Economy</th></tr>';
                 echo '<tr><td>'.$qty['SUM(qty)'].'</td><td>'.$weight['SUM(weight)'].'</td><td>'.$overnight['SUM(weight)'].'</td><td>'.$budget['SUM(weight)'].'</td><td>'.$consol['SUM(weight)'].'</td><td>'.$economy['SUM(weight)'].'</td></tr>';
 

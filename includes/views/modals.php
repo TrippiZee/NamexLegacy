@@ -189,42 +189,42 @@
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">POD Number</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="number" value="<?php echo htmlentities($waybill['waybill_no'])?>">
+                            <input type="text" class="form-control" name="number" value="<?php echo htmlentities($data['waybill_no'])?>">
                         </div>
                         <label for="date" class="col-sm-2 col-form-label">Date</label>
                         <div class="col-sm-4">
-                            <input type="date" class="form-control" name="date" value="<?php echo htmlentities($waybill['date'])?>">
+                            <input type="date" class="form-control" name="date" value="<?php echo htmlentities($data['date'])?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="shipper" class="col-sm-2 col-form-label">Shipper</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="shipper" value="<?php echo htmlentities($waybill['shipper'])?>">
+                            <input type="text" class="form-control" name="shipper" value="<?php echo htmlentities($data['shipper'])?>">
                         </div>
                         <label for="consignee" class="col-sm-2 col-form-label">Consignee</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="consignee" value="<?php echo htmlentities($waybill['consignee'])?>">
+                            <input type="text" class="form-control" name="consignee" value="<?php echo htmlentities($data['consignee'])?>">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="qty" class="col-sm-2 col-form-label">Quantity</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="qty" value="<?php echo htmlentities($waybill['qty'])?>">
+                            <input type="text" class="form-control" name="qty" value="<?php echo htmlentities($data['qty'])?>">
                         </div>
                         <label for="weight" class="col-sm-2 col-form-label">Weight</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="weight" value="<?php echo htmlentities($waybill['weight'])?>">
+                            <input type="text" class="form-control" name="weight" value="<?php echo htmlentities($data['weight'])?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="type" class="col-sm-2 col-form-label">Type</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="type" value="<?php echo htmlentities($waybill['type'])?>">
+                            <input type="text" class="form-control" name="type" value="<?php echo htmlentities($data['type'])?>">
                         </div>
                         <label for="remarks" class="col-sm-2 col-form-label">Remarks</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="remarks" value="<?php echo htmlentities($waybill['remarks'])?>">
+                            <input type="text" class="form-control" name="remarks" value="<?php echo htmlentities($data['remarks'])?>">
                         </div>
                     </div>
 
@@ -258,3 +258,5 @@
         </div>
     </div>
 </div>
+
+<!---------------------------------------------------------POD------------------------------------------------------------>
