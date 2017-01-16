@@ -1,7 +1,7 @@
 <?php
-require('includes/fpdf.php');
-require ("includes/core.php");
-require ("includes/db_connection.php");
+require('fpdf.php');
+require("core.php");
+require("db_connection.php");
 
 if (isset($_GET['print_id'])){
     $id=$_GET['print_id'];
@@ -47,7 +47,7 @@ if (isset($_GET['print_id'])){
     function Header()
     {
         // Logo
-        $this->Image('img/header.jpg',50,6,100);
+        $this->Image('../img/header.jpg',50,6,100);
         // Arial bold 15
         $this->SetFont('Arial','B',15);
         // Move to the right

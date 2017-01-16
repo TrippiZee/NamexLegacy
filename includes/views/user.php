@@ -29,7 +29,7 @@ include "layout/header.php";
             echo '<td>'.$user['surname'].'</td>';
             echo '<td>'.$user['role'].'</td></tr>';
             echo '<tr><td class="edit"><a href="../../edit_user.php?id=' .$user['id'].'"><input type="button" value="Edit"/></a></td>';
-                echo '<td class="edit"><a href="../../del_user.php?id=' .$user['id'].'" onclick="return confirm(\'Really Delete?\');"><input type="button" value="Delete"/></a></td>';
+                echo '<td class="edit"><a href="del_user.php?id=' .$user['id'].'" onclick="return confirm(\'Really Delete?\');"><input type="button" value="Delete"/></a></td>';
             echo "</tr>";
             echo "</table>";
         }

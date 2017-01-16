@@ -2,10 +2,10 @@
 
 return [
     'database' => [
-        'name' => 'namexapp',
+        'name' => 'namibmhz_app',
         'username' => 'root',
         'password' => '',
-        'connection' => 'localhost',
+        'connection' => '127.0.0.1',
         'options' => [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         ],

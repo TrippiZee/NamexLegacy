@@ -31,7 +31,7 @@ include "layout/header.php";
             if ($manifest['finalised'] == '0') {
             echo '<tr><td class="edit"><a href="../../edit_manifest.php?id=' .$manifest['id'].'"><input type="button" value="Edit"/></a></td>';
         if (getuserfield('role') == 'admin'){
-            echo '<td class="edit"><a href="../../del_manifest.php?id=' .$manifest['id'].'" onclick="return confirm(\'Really Delete?\');"><input type="button" value="Delete"/></a></td>';
+            echo '<td class="edit"><a href="del_manifest.php?id=' .$manifest['id'].'" onclick="return confirm(\'Really Delete?\');"><input type="button" value="Delete"/></a></td>';
         }
             echo "</tr>";}
 
@@ -81,7 +81,7 @@ include "layout/header.php";
                 echo '<td style="visibility: hidden">'.$data['date'].'</td></tr>';
                 echo '<tr><td class="edit"><a href="../../edit_waybill.php?id=' .$data['id'].'& shipper='.$data['shipper'].'& type='.$data['type'].'"><input type="button" value="Edit"/></a></td>';
                 if (getuserfield('role') == 'admin'){
-                    echo '<td class="edit"><a href="../../del_waybill.php?id=' .$data['id'].'" onclick="return confirm(\'Really Delete?\');"><input type="button" value="Delete"/></a></td>';}
+                    echo '<td class="edit"><a href="del_waybill.php?id=' .$data['id'].'" onclick="return confirm(\'Really Delete?\');"><input type="button" value="Delete"/></a></td>';}
                 echo '<td></td>';
                 echo '<td></td>';
                 echo '<td></td>';
@@ -109,7 +109,7 @@ include "layout/header.php";
                 echo '<tr></tr>';
                 echo '<tr></tr>';
 
-                echo '<tr><td><a href="../../print_manifest.php?print_id=' .$manifest_id.'" target="_BLANK"><input type="button" value="PRINT"/></a> </td></tr>';
+                echo '<tr><td><a href="../print_manifest.php?print_id=' .$manifest_id.'" target="_BLANK"><input type="button" value="PRINT"/></a> </td></tr>';
                 echo '<tr><br /></tr>';
                 echo '<tr><br /></tr>';
                 echo '<tr><br /></tr>';
