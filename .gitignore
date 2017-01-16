@@ -3,3 +3,7 @@
 *.xml
 .idea/NamexLegacy.iml
 customers.sql
+config.php
+includes/models/ConnectionLive.php
+includes/db_connection.php
+config.php
