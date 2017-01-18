@@ -1,5 +1,10 @@
 <?php
 require("../bootstrapper.php");
+$router = new Router;
+require '../../routes.php';
+$uri = trim($_SERVER['REQUEST_URI'],'/');
+var_dump($_SERVER['REQUEST_URI']);
+require $router->redirect($uri);
 ?>
 <!DOCTYPE html>
 <html>

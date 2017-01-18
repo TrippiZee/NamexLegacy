@@ -1,5 +1,6 @@
 <?php
 require ("core.php");
+require ("router.php");
 require ("db_connection.php");
 require ("models/Connection.php");
 require ("models/Customers.php");

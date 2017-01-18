@@ -2,7 +2,7 @@
 
 return [
     'database' => [
-        'name' => 'namibmhz_app',
+        'name' => 'namexapp',
         'username' => 'root',
         'password' => '',
         'connection' => '127.0.0.1',

@@ -4,7 +4,7 @@ require ("includes/db_connection.php");
 
 
 if (logged_in()) {
-    redirect_to('includes/views/customer.php');
+    redirect_to('includes/views/dashboard.php');
 } else {
     include "loginform.php";
 
