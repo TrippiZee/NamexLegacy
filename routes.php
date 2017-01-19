@@ -1,14 +1,14 @@
 <?php
 
 $router->define([
-    'namexlegacy' => 'includes/controllers/dashboard.php',
-    'namexlegacy/index.php' => 'includes/controllers/customerview.php',
-    'namexlegacy/customer.php' => 'includes/controllers/customers.php',
-    'manifest' => 'includes/controllers/manifests',
-    'waybill' => 'includes/controllers/waybills',
-    'pod' => 'includes/controllers/pods',
-    'tracking' => 'includes/controllers/tracking',
-    'costing' => 'includes/controllers/costing',
-    'reports' => 'includes/controllers/reports',
+    '' => 'includes/controllers/customerview.php',
+    'customer' => 'includes/controllers/customerview.php',
+    'index' => 'includes/controllers/manifestview.php',
+    'manifest' => 'includes/controllers/dashboard.php',
+    'waybill' => 'includes/controllers/dashboard.php',
+    'pod' => 'includes/controllers/dashboard.php',
+    'tracking' => 'includes/controllers/dashboard.php',
+    'costing' => 'includes/controllers/dashboard.php',
+    'reports' => 'includes/controllers/dashboard.php',
     'user' => 'includes/controllers/users',
 ]);

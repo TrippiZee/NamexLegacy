@@ -11,7 +11,7 @@ $(document).ready(function() {
         "processing": true,
         "serverSide":true,
         "ajax":{
-            url:"../controllers/manifests.php",
+            url:"includes/controllers/manifests.php",
             type:"post"
         }
     });
