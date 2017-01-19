@@ -1,3 +1,3 @@
 <?php
 
-require '../views/dashboard.php';
+require 'includes/views/dashboard.php';

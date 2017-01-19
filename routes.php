@@ -1,9 +1,9 @@
 <?php
 
 $router->define([
-    '' => 'includes/controllers/dashboard',
-    'namexlegacy/includes/views/dashboard' => 'includes/controllers/dashboard.php',
-    'customer' => 'includes/controllers/customers',
+    'namexlegacy' => 'includes/controllers/dashboard.php',
+    'namexlegacy/index.php' => 'includes/controllers/customerview.php',
+    'namexlegacy/customer.php' => 'includes/controllers/customers.php',
     'manifest' => 'includes/controllers/manifests',
     'waybill' => 'includes/controllers/waybills',
     'pod' => 'includes/controllers/pods',

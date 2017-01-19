@@ -1,22 +1,22 @@
 <?php
-require("../bootstrapper.php");
-$router = new Router;
-require '../../routes.php';
-$uri = trim($_SERVER['REQUEST_URI'],'/');
-var_dump($_SERVER['REQUEST_URI']);
-require $router->redirect($uri);
+//require("../bootstrapper.php");
+//$router = new Router;
+//require '../../routes.php';
+//$uri = trim($_SERVER['REQUEST_URI'],'/');
+//var_dump($_SERVER['REQUEST_URI']);
+//require $router->redirect($uri);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Namibia Express Transport Doc Management System</title>
-    <link href="../../stylesheets/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
-    <link href="../../stylesheets/dataTables.bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
-    <link href="../../scripts/jquery-ui-1.12.1/jquery-ui.min.css" media="all" rel="stylesheet" type="text/css"/>
-    <link href="../../scripts/jquery-ui-1.12.1/jquery-ui.structure.min.css" media="all" rel="stylesheet" type="text/css"/>
-    <link href="../../scripts/jquery-ui-1.12.1/jquery-ui.theme.min.css" media="all" rel="stylesheet" type="text/css"/>
-    <link href="../../stylesheets/jquery-ui-timepicker-addon.css" media="all" rel="stylesheet" type="text/css"/>
-    <link href="../../stylesheets/style.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/dataTables.bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="scripts/jquery-ui-1.12.1/jquery-ui.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="scripts/jquery-ui-1.12.1/jquery-ui.structure.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="scripts/jquery-ui-1.12.1/jquery-ui.theme.min.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="stylesheets/jquery-ui-timepicker-addon.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="stylesheets/style.css" media="all" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
@@ -30,5 +30,5 @@ require $router->redirect($uri);
         </div>
     </div>
 <?php
-include "layout/sidemenu.php";
+include "includes/views/layout/sidemenu.php";
 ?>

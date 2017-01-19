@@ -16,7 +16,8 @@
             } else if($query_num_rows ==1) {
                     $id = $query_run->fetch_assoc()['id'];
                     $_SESSION['user_id'] = $id;
-                redirect_to('includes/views/dashboard.php');
+//                redirect_to('includes/views/dashboard.php');
+                require $router->redirect($uri);
                 }
 
         }
@@ -28,6 +29,7 @@
 
 ?>
 
+<link href="stylesheets/login.css" media="all" rel="stylesheet" type="text/css" />
 
 <form id="login" action="<?php echo $current_file; ?>" method="POST">
 

@@ -3,7 +3,7 @@ $(document).ready(function() {
         "processing": true,
         "serverSide":true,
         "ajax":{
-            url:"../controllers/customers.php",
+            url:"includes/controllers/customers.php",
             type:"post"
         }
     });
