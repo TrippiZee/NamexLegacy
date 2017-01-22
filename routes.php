@@ -4,7 +4,7 @@ $router->define([
     '' => 'includes/controllers/customerview.php',
     'customer' => 'includes/controllers/customerview.php',
     'index' => 'includes/controllers/manifestview.php',
-    'manifest' => 'includes/controllers/dashboard.php',
+    'manifest' => 'includes/controllers/manifestview.php',
     'waybill' => 'includes/controllers/dashboard.php',
     'pod' => 'includes/controllers/dashboard.php',
     'tracking' => 'includes/controllers/dashboard.php',

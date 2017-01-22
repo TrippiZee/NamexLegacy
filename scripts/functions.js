@@ -19,7 +19,7 @@ $(document).ready(function() {
         "processing": true,
         "serverSide":true,
         "ajax":{
-            url:"../controllers/waybills.php",
+            url:"includes/controllers/waybills.php",
             type:"post"
         }
     });
@@ -27,7 +27,7 @@ $(document).ready(function() {
         "processing": true,
         "serverSide":true,
         "ajax":{
-            url:"../controllers/pods.php",
+            url:"includes/controllers/pods.php",
             type:"post"
         }
     });
