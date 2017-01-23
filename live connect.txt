@@ -1,1 +1,0 @@
-        return new PDO('mysql:host=sql26.jnb1.host-h.net;dbname=Namibmhz_app1','Namibmhz_app1','Nam1b123App');
