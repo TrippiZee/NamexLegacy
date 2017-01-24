@@ -27,7 +27,7 @@ $customers = array();
 
 foreach ($tableData as $row){
     $nestedData = array();
-    $nestedData[] = "<a href='customer.php?id=".$row->id."'>".$row->comp_name."</a>";
+    $nestedData[] = "<a href='customer?id=".$row->id."'>".$row->comp_name."</a>";
     $nestedData[] = $row->acc_no;
     $nestedData[] = $row->address1;
     $nestedData[] = $row->city;

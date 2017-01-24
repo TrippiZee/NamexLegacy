@@ -28,7 +28,7 @@ $manifests = array();
 foreach ($tableData as $row){
     $nestedData = array();
     $nestedData[] = $row->date;
-    $nestedData[] = "<a href='manifest.php?id=".$row->id."'>".$row->manifest_no."</a>";
+    $nestedData[] = "<a href='manifest?id=".$row->id."'>".$row->manifest_no."</a>";
     $nestedData[] = $row->driver;
     $nestedData[] = $row->co_driver;
     $nestedData[] = $row->reg_no;

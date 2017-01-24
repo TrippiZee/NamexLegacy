@@ -20,7 +20,7 @@ $pod = array();
 
 foreach ($tableData as $row){
     $nestedData = array();
-    $nestedData[] = "<a href='pod.php?id=".$row->id."'>".$row->pod_no."</a>";
+    $nestedData[] = "<a href='pod?id=".$row->id."'>".$row->pod_no."</a>";
     $nestedData[] = $row->date;
     $nestedData[] = $row->shipper;
     $nestedData[] = $row->consignee;

@@ -33,7 +33,8 @@ include "header.php";
             echo '<td>'.$pod['delivery_date'].'</td>';
             echo '<td>'.$pod['signed_by'].'</td>';
             echo '<td>'.$pod['time'].'</td></tr>';
-            echo '<tr><td class="edit"><a href="../../edit_pod.php?id=' .$pod['id'].'&consignee='.$pod['consignee'].'&shipper='.$pod['shipper'].'"><input type="button" value="Edit"/></a></td>';
+            echo '<tr><td class="edit"><button data-toggle="modal" data-target="#editPOD" class="btn btn-success col-xs-12 btn-narrow">Edit POD</button></td>';
+//            echo '<tr><td class="edit"><a href="../../edit_pod.php?id=' .$pod['id'].'&consignee='.$pod['consignee'].'&shipper='.$pod['shipper'].'"><input type="button" value="Edit"/></a></td>';
             if (getuserfield('role') == 'admin'){
                 echo '<td class="edit"><a href="del_pod.php?id=' .$pod['id'].'" onclick="return confirm(\'Really Delete?\');"><input type="button" value="Delete"/></a></td>';}
             echo "</tr>";

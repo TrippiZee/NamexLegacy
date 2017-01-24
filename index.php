@@ -2,7 +2,7 @@
 require("/includes/bootstrapper.php");
 $router = new Router;
 require '/routes.php';
-$uri = trim($_SERVER['REQUEST_URI'],'/');
+$uri = trim(parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH),'/');
 //var_dump($_SERVER['REQUEST_URI']);
 
 if (logged_in()) {

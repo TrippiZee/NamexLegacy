@@ -26,7 +26,7 @@ $waybills = array();
 
 foreach ($tableData as $row){
     $nestedData = array();
-    $nestedData[] = "<a href='waybill.php?id=".$row->id."'>".$row->waybill_no."</a>";
+    $nestedData[] = "<a href='waybill?id=".$row->id."'>".$row->waybill_no."</a>";
     $nestedData[] = $row->date;
     $nestedData[] = $row->manifest_no;
     $nestedData[] = $row->shipper;
