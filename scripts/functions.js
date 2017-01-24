@@ -3,7 +3,8 @@ $(document).ready(function() {
         "processing": true,
         "serverSide":true,
         "ajax":{
-            url:"inc/controllers/customers.php",
+            //url:"includes/controllers/customers.php",
+            url:"ajaxCustomer",
             type:"post"
         }
     });
@@ -11,7 +12,8 @@ $(document).ready(function() {
         "processing": true,
         "serverSide":true,
         "ajax":{
-            url:"inc/controllers/manifests.php",
+            //url:"includes/controllers/manifests.php",
+            url:"ajaxManifest",
             type:"post"
         }
     });
@@ -19,7 +21,8 @@ $(document).ready(function() {
         "processing": true,
         "serverSide":true,
         "ajax":{
-            url:"inc/controllers/waybills.php",
+            //url:"includes/controllers/waybills.php",
+            url:"ajaxWaybills",
             type:"post"
         }
     });
@@ -27,7 +30,8 @@ $(document).ready(function() {
         "processing": true,
         "serverSide":true,
         "ajax":{
-            url:"inc/controllers/pods.php",
+            //url:"includes/controllers/pods.php",
+            url:"ajaxPods",
             type:"post"
         }
     });

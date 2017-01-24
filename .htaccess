@@ -1,5 +1,14 @@
+Options +FollowSymLinks
 RewriteEngine On
 RewriteBase /
-RewriteCond %{REQUEST_FILENAME}% !-d
-RewriteCond %{REQUEST_FILENAME}% !-f
-RewriteRule ^(.+)$ index.php [QSA,L]
+RewriteRule ^(stylesheets|scripts|fonts|img)($|/) - [L]
+RewriteRule ^(.*)$ index.php [L]
+#RewriteRule ^.*$ index.php [END]
+
+
+
+#RewriteEngine On
+#RewriteBase /
+#RewriteCond %{REQUEST_FILENAME}% !-d
+#RewriteCond %{REQUEST_FILENAME}% !-f
+#RewriteRule ^(.+)$ index.php [QSA,L]
