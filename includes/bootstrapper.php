@@ -8,5 +8,6 @@ require ("/includes/models/Waybills.php");
 require ("/includes/models/Manifest.php");
 require ("/includes/models/Pod.php");
 require ("/includes/models/User.php");
+require ("/includes/models/UserRole.php");
 $config = require ("/config.php");
 $pdo = Connection::connect($config['database']);

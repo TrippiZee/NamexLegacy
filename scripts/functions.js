@@ -35,6 +35,14 @@ $(document).ready(function() {
             type:"post"
         }
     });
+    $(".users").dataTable({
+        "processing": true,
+        "serverSide":true,
+        "ajax":{
+            url:"ajaxUsers",
+            type:"post"
+        }
+    });
     $(".date").datepicker({
         dateFormat:"yy-mm-dd"
     });

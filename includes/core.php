@@ -135,6 +135,18 @@ function getAllPod($pdo,$columns,$request,$searchTerm){
     return array($statement->fetchAll(PDO::FETCH_CLASS,'Pod'),$filter->rowCount());
 }
 
+function getAllUsersAjax($pdo,$columns,$request,$searchTerm){
+    $statement = $pdo->prepare('SELECT * FROM users WHERE 1 AND ( username LIKE "'.$searchTerm.'%" OR name LIKE "'.$searchTerm.'%" OR surname LIKE "'.$searchTerm.'%" OR role LIKE "'.$searchTerm.'%" ) ORDER BY '.$columns[$request['order'][0]['column']].' '.$request['order'][0]['dir'].' LIMIT '.$request['start'].' ,'.$request['length'].' ');
+
+    $statement->execute();
+
+    $filter = $pdo->prepare('SELECT * FROM users WHERE 1 AND ( username LIKE "'.$searchTerm.'%" OR name LIKE "'.$searchTerm.'%" OR surname LIKE "'.$searchTerm.'%" OR role LIKE "'.$searchTerm.'%" )');
+
+    $filter->execute();
+
+    return array($statement->fetchAll(PDO::FETCH_CLASS,'User'),$filter->rowCount());
+}
+
 function user ($id){
     global $connection;
 
@@ -152,13 +164,10 @@ function getAllUsers($pdo){
     return $statement->fetchAll(PDO::FETCH_CLASS,'User');
 }
 
- function user_role() {
-     global $connection;
-
-     $query = "SELECT * FROM users_role ORDER BY role";
-     $role_result = mysqli_query($connection,$query);
-     confirm_query($role_result);
-     return $role_result;
+ function user_role($pdo) {
+     $statement = $pdo->prepare('SELECT * FROM users_role ORDER BY role');
+     $statement->execute();
+     return $statement->fetchAll(PDO::FETCH_CLASS,'UserRole');
  }
 
 function services() {

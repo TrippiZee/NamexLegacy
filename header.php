@@ -25,7 +25,7 @@
         <div class="col-sm-12">
         <div id="logo"></div>
         <div id="user">Welcome: <?php echo getuserfield('name').' '.getuserfield('surname') ?> <br/>
-            <a href="../../../logout.php">Logout</a>
+            <a href="logout">Logout</a>
         </div>
         </div>
     </div>

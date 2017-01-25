@@ -38,7 +38,7 @@ include "/header.php";
 
             if ($result) {
                 // Success
-                redirect_to("customer.php?id=".mysqli_insert_id($connection));
+                redirect_to("customer?id=".mysqli_insert_id($connection));
             } else {
                 // Failure
                 echo 'Failed';
@@ -80,7 +80,7 @@ include "/header.php";
             $result = mysqli_query($connection,$update_query);
             if ($result && mysqli_affected_rows($connection) >= 0) {
                 // Success
-                redirect_to("customer.php?id=".$post_id);
+                redirect_to("customer?id=".$post_id);
 //                redirect_to("customer.php");
             } else {
                 die("Subject update failed.".mysqli_error($connection));
