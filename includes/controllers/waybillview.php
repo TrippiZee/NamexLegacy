@@ -1,2 +1,2 @@
 <?php
-require '/includes/views/waybill.php';
+require $basePath.'/includes/views/waybill.view.php';

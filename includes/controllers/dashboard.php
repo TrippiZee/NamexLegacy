@@ -1,2 +1,2 @@
 <?php
-require '/includes/views/dashboard.php';
+require $basePath.'/includes/views/dashboard.view.php';

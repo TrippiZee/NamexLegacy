@@ -1,13 +1,13 @@
 <?php
-require ("/includes/core.php");
-require ("/includes/router.php");
-require ("/includes/db_connection.php");
-require ("/includes/models/Connection.php");
-require ("/includes/models/Customers.php");
-require ("/includes/models/Waybills.php");
-require ("/includes/models/Manifest.php");
-require ("/includes/models/Pod.php");
-require ("/includes/models/User.php");
-require ("/includes/models/UserRole.php");
-$config = require ("/config.php");
+require ($basePath."/includes/core.php");
+require ($basePath."/includes/router.php");
+require ($basePath."/includes/db_connection.php");
+require ($basePath."/includes/models/Connection.php");
+require ($basePath."/includes/models/Customers.php");
+require ($basePath."/includes/models/Waybills.php");
+require ($basePath."/includes/models/Manifest.php");
+require ($basePath."/includes/models/Pod.php");
+require ($basePath."/includes/models/User.php");
+require ($basePath."/includes/models/UserRole.php");
+$config = require ($basePath."/config.php");
 $pdo = Connection::connect($config['database']);

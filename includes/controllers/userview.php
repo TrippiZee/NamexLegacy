@@ -1,2 +1,2 @@
 <?php
-require '/includes/views/user.php';
+require $basePath.'/includes/views/user.view.php';

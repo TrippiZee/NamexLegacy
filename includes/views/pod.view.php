@@ -1,5 +1,5 @@
 <?php
-include "header.php";
+include $basePath."includes/views/layout/header.php";
 ?>
 <div class="col-sm-11 main">
     <div class="row">
@@ -11,6 +11,46 @@ include "header.php";
         <div class="col-sm-12">
 
         <?php
+
+        if (isset($_POST['editPod'])) {
+
+            $pod_no = $_POST['number'];
+            $date = $_POST['date'];
+            $shipper = strtoupper($_POST['shipper']);
+            $consignee = strtoupper($_POST['consignee']);
+            $qty = strtoupper($_POST['qty']);
+            $weight = $_POST['weight'];
+            $type = strtoupper($_POST['type']);
+            $remarks = strtoupper($_POST['remarks']);
+            $delivery = $_POST['delivery'];
+            $signed = strtoupper($_POST['signed']);
+            $time = $_POST['time'];
+            $post_id = $_POST['id'];
+
+
+            $update_query  = "UPDATE pod SET ";
+            $update_query .= "pod_no = '{$pod_no}', ";
+            $update_query .= "date = '{$date}', ";
+            $update_query .= "shipper = '{$shipper}', ";
+            $update_query .= "consignee = '{$consignee}', ";
+            $update_query .= "qty = '{$qty}', ";
+            $update_query .= "weight = '{$weight}', ";
+            $update_query .= "type = '{$type}', ";
+            $update_query .= "remarks = '{$remarks}', ";
+            $update_query .= "delivery_date = '{$delivery}', ";
+            $update_query .= "signed_by = '{$signed}', ";
+            $update_query .= "time = '{$time}' ";
+            $update_query .= "WHERE id = '{$post_id}' ";
+            $update_query .= "LIMIT 1";
+            $result = mysqli_query($connection,$update_query);
+            if ($result && mysqli_affected_rows($connection) >= 0) {
+                // Success
+                redirect_to("pod?id=".$post_id);
+            } else {
+                die("Subject update failed.".mysqli_error($connection));
+
+            }
+        }
 
         $id = '';
         if (isset($_GET['id'])){
@@ -46,10 +86,12 @@ include "header.php";
                     <tr><th>POD Number</th><th>Date</th><th>Shipper</th><th>Consignee</th></tr>
                     </thead></table>';
         }
+        require $basePath.'/includes/views/modals/pod.modal.php';
+
         ?>
         </div>
     </div>
 </div>
 <?php
-include "footer.php";
+include $basePath."includes/views/layout/footer.php";
 ?>

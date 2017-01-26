@@ -1,5 +1,5 @@
 <?php
-include "header.php";
+include $basePath."includes/views/layout/header.php";
 ?>
 <div class="col-sm-11 main">
     <div class="row">
@@ -31,7 +31,7 @@ include "header.php";
 
             if ($result) {
                 // Success
-                redirect_to("pod.php?id=".mysqli_insert_id($connection));
+                redirect_to("pod?id=".mysqli_insert_id($connection));
             } else {
                 // Failure
                 echo 'Failed';
@@ -76,6 +76,7 @@ include "header.php";
                     <tr><th>Waybill_No</th><th>Date</th><th>Manifest_No</th><th>Shipper</th><th>Consignee</th></tr>
                     </thead></table>';
         }
+        require $basePath.'/includes/views/modals/waybill.modal.php';
         ?>
 
 
@@ -83,5 +84,5 @@ include "header.php";
     </div>
 </div>
 <?php
-include "footer.php";
+include $basePath."includes/views/layout/footer.php";
 ?>

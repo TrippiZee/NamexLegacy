@@ -1,12 +1,14 @@
 <?php
-include "header.php";
+include $basePath."includes/views/layout/header.php";
 ?>
 <div class="col-sm-11 main">
     <div class="row">
-        <div class="col-sm-2 col-sm-offset-5">
-            <h2>All Manifest:</h2>
+        <div class="col-sm-3">
+            <br>
+            <button data-toggle="modal" data-target="#addManifest" class="btn btn-success col-xs-12 btn-narrow">Add New Manifest</button>
+        </div>
     </div>
-</div>
+    <hr>
 <div class="row">
     <div class="col-sm-12">
 
@@ -29,7 +31,8 @@ include "header.php";
             echo '<td>'.$manifest['co_driver'].'</td>';
             echo '<td>'.$manifest['reg_no'].'</td></tr>';
             if ($manifest['finalised'] == '0') {
-            echo '<tr><td class="edit"><a href="../../edit_manifest.php?id=' .$manifest['id'].'"><input type="button" value="Edit"/></a></td>';
+            echo '<tr><td class="edit"><button data-toggle="modal" data-target="#editManifest" class="btn btn-success col-xs-12 btn-narrow">Edit Manifest</button></td>';
+//            echo '<tr><td class="edit"><a href="../../edit_manifest.php?id=' .$manifest['id'].'"><input type="button" value="Edit"/></a></td>';
         if (getuserfield('role') == 'admin'){
             echo '<td class="edit"><a href="del_manifest.php?id=' .$manifest['id'].'" onclick="return confirm(\'Really Delete?\');"><input type="button" value="Delete"/></a></td>';
         }
@@ -127,5 +130,5 @@ include "header.php";
     </div>
 </div>
 <?php
-include "footer.php";
+include $basePath."includes/views/layout/footer.php";
 ?>

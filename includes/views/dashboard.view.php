@@ -1,6 +1,6 @@
 <?php
 
-include "/header.php";
+include $basePath."includes/views/layout/header.php";
 ?>
 <div class="col-sm-11 main">
     <div class="row">
@@ -54,5 +54,5 @@ include "/header.php";
 </div>
 
 <?php
-include "/footer.php";
+include $basePath."includes/views/layout/footer.php";
 ?>

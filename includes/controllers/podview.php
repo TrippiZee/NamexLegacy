@@ -1,2 +1,2 @@
 <?php
-require '/includes/views/pod.php';
+require $basePath.'/includes/views/pod.view.php';

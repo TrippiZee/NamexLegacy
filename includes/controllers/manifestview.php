@@ -1,2 +1,2 @@
 <?php
-require '/includes/views/manifest.php';
+require $basePath.'/includes/views/manifest.view.php';
