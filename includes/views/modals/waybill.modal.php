@@ -49,7 +49,16 @@
                     <div class="form-group row">
                         <label for="type" class="col-sm-2 col-form-label">Type</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="type" value="<?php echo htmlentities($data['type'])?>">
+                            <select name="type">
+                                <option selected value="<?php echo htmlentities($data['type'])?>"><?php echo htmlentities($data['type'])?></option>
+                                <?php foreach($services as $key => $service){?>
+                                    <option value="<?php echo $service->type;?>"><?php echo $service->type;?></option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+
+                            <!--                            <input type="text" class="form-control" name="type" value="--><?php //echo htmlentities($data['type'])?><!--">-->
                         </div>
                         <label for="remarks" class="col-sm-2 col-form-label">Remarks</label>
                         <div class="col-sm-4">

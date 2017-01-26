@@ -170,14 +170,19 @@ function getAllUsers($pdo){
      return $statement->fetchAll(PDO::FETCH_CLASS,'UserRole');
  }
 
-function services() {
-    global $connection;
-
-    $query = "SELECT * FROM services ORDER BY type";
-    $role_result = mysqli_query($connection,$query);
-    confirm_query($role_result);
-    return $role_result;
+function getServices($pdo) {
+    $statement = $pdo->prepare('SELECT * FROM services ORDER BY type');
+    $statement->execute();
+    return $statement->fetchAll(PDO::FETCH_CLASS,'Services');
 }
+//function services() {
+//    global $connection;
+//
+//    $query = "SELECT * FROM services ORDER BY type";
+//    $role_result = mysqli_query($connection,$query);
+//    confirm_query($role_result);
+//    return $role_result;
+//}
 
 function quantity($id) {
     global $connection;

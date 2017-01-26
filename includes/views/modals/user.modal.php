@@ -101,7 +101,15 @@
                     <div class="form-group row">
                         <label for="role" class="col-sm-2 col-form-label">Role</label>
                         <div class="col-sm-4">
-                            <input type="text" class="form-control" name="role" value="<?php echo htmlentities($user['role'])?>">
+                            <select name="role">
+                                <option selected disabled value="<?php echo htmlentities($user['role'])?>"><?php echo htmlentities($user['role'])?></option>
+                                <?php foreach($roles as $key => $value){?>
+                                    <option value="<?php echo $value->role;?>"><?php echo $value->role;?></option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+<!--                            <input type="text" class="form-control" name="role" value="--><?php //echo htmlentities($user['role'])?><!--">-->
                             <input type="hidden" class="form-control" id="id" name="id" value="<?php echo htmlentities($user['id'])?>">
                         </div>
                     </div>

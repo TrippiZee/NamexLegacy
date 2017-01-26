@@ -6,6 +6,8 @@ include $basePath."includes/views/layout/header.php";
         <div class="col-sm-12">
         <?php
 
+        $services = getServices($pdo);
+
         if (isset($_POST['createPOD'])) {
 
             $pod = $_POST['number'];

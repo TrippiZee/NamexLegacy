@@ -9,5 +9,6 @@ require ($basePath."/includes/models/Manifest.php");
 require ($basePath."/includes/models/Pod.php");
 require ($basePath."/includes/models/User.php");
 require ($basePath."/includes/models/UserRole.php");
+require ($basePath."/includes/models/Services.php");
 $config = require ($basePath."/config.php");
 $pdo = Connection::connect($config['database']);
