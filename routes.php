@@ -3,7 +3,7 @@
 $router->define([
     '' => $basePath.'includes/controllers/dashboard.php',
     'customer' => $basePath.'includes/controllers/customerview.php',
-    'index.php' => $basePath.'includes/controllers/dashboard.php',
+//    'index.php' => $basePath.'includes/controllers/customerview.php',
     'manifest' => $basePath.'includes/controllers/manifestview.php',
     'waybill' => $basePath.'includes/controllers/waybillview.php',
     'pod' => $basePath.'includes/controllers/podview.php',
