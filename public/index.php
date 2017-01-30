@@ -1,6 +1,6 @@
 <?php
 $basePath = __DIR__.'/../';
-
+require($basePath."vendor/autoload.php");
 require($basePath."includes/bootstrapper.php");
 $router = new Router;
 require $basePath.'routes.php';
