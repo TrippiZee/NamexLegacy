@@ -7,12 +7,16 @@ namespace Composer\Autoload;
 class ComposerStaticInit819f9842d034e6439b92d992998a92c9
 {
     public static $classMap = array (
+        'ComposerAutoloaderInit819f9842d034e6439b92d992998a92c9' => __DIR__ . '/..' . '/composer/autoload_real.php',
+        'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',
+        'Composer\\Autoload\\ComposerStaticInit819f9842d034e6439b92d992998a92c9' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Connection' => __DIR__ . '/../..' . '/includes/models/Connection.php',
         'Customers' => __DIR__ . '/../..' . '/includes/models/Customers.php',
         'FPDF' => __DIR__ . '/../..' . '/includes/fpdf.php',
         'Manifest' => __DIR__ . '/../..' . '/includes/models/Manifest.php',
         'PDF' => __DIR__ . '/../..' . '/includes/print_manifest.php',
         'Pod' => __DIR__ . '/../..' . '/includes/models/Pod.php',
+        'Request' => __DIR__ . '/../..' . '/includes/Request.php',
         'Router' => __DIR__ . '/../..' . '/includes/router.php',
         'Services' => __DIR__ . '/../..' . '/includes/models/Services.php',
         'User' => __DIR__ . '/../..' . '/includes/models/User.php',

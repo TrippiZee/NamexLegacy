@@ -6,12 +6,16 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'ComposerAutoloaderInit819f9842d034e6439b92d992998a92c9' => $vendorDir . '/composer/autoload_real.php',
+    'Composer\\Autoload\\ClassLoader' => $vendorDir . '/composer/ClassLoader.php',
+    'Composer\\Autoload\\ComposerStaticInit819f9842d034e6439b92d992998a92c9' => $vendorDir . '/composer/autoload_static.php',
     'Connection' => $baseDir . '/includes/models/Connection.php',
     'Customers' => $baseDir . '/includes/models/Customers.php',
     'FPDF' => $baseDir . '/includes/fpdf.php',
     'Manifest' => $baseDir . '/includes/models/Manifest.php',
     'PDF' => $baseDir . '/includes/print_manifest.php',
     'Pod' => $baseDir . '/includes/models/Pod.php',
+    'Request' => $baseDir . '/includes/Request.php',
     'Router' => $baseDir . '/includes/router.php',
     'Services' => $baseDir . '/includes/models/Services.php',
     'User' => $baseDir . '/includes/models/User.php',
