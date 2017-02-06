@@ -112,7 +112,7 @@ include $basePath."includes/views/layout/header.php";
                 echo '<tr></tr>';
                 echo '<tr></tr>';
 
-                echo '<tr><td><a href="../print_manifest.php?print_id=' .$manifest_id.'" target="_BLANK"><input type="button" value="PRINT"/></a> </td></tr>';
+                echo '<tr><td><a href="print_manifest?print_id=' .$manifest_id.'" target="_BLANK"><input type="button" value="PRINT"/></a> </td></tr>';
                 echo '<tr><br /></tr>';
                 echo '<tr><br /></tr>';
                 echo '<tr><br /></tr>';
@@ -125,7 +125,9 @@ include $basePath."includes/views/layout/header.php";
                     <tr><th>Date</th><th>Manifest No</th><th>Driver</th><th>Co-Driver</th><th>Reg No</th></tr>
                     </thead></table>';
          }
-        ?>
+            require $basePath.'/includes/views/modals/manifest.modal.php';
+
+            ?>
         </div>
     </div>
 </div>

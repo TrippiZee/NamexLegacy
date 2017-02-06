@@ -29,6 +29,7 @@ $router->get('costing',$basePath.'includes/controllers/dashboard.php');
 $router->get('reports',$basePath.'includes/controllers/dashboard.php');
 $router->get('user',$basePath.'includes/controllers/userview.php');
 $router->get('logout',$basePath.'includes/controllers/logout.php');
+$router->get('print_manifest',$basePath.'includes/print_manifest.php');
 $router->post('ajaxCustomer',$basePath.'includes/controllers/customers.php');
 $router->post('ajaxManifest',$basePath.'includes/controllers/manifests.php');
 $router->post('ajaxPods',$basePath.'includes/controllers/pods.php');
