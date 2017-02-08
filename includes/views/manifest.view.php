@@ -13,6 +13,33 @@ include $basePath."includes/views/layout/header.php";
     <div class="col-sm-12">
 
         <?php
+        if (isset($_POST['editManifest'])) {
+
+            $number = $_POST['number'];
+            $date = $_POST['date'];
+            $driver = strtoupper($_POST['driver']);
+            $post_id = $_POST['id'];
+            $co_driver = strtoupper($_POST['co_driver']);
+            $caps_reg_no = strtoupper($_POST['reg_no']);
+            $reg_no = trim($caps_reg_no,"");
+
+            $update_query  = "UPDATE manifest SET ";
+            $update_query .= "manifest_no = '{$number}', ";
+            $update_query .= "date = '{$date}', ";
+            $update_query .= "driver = '{$driver}', ";
+            $update_query .= "co_driver = '{$co_driver}', ";
+            $update_query .= "reg_no = '{$reg_no}' ";
+            $update_query .= "WHERE id = '{$post_id}' ";
+            $update_query .= "LIMIT 1";
+            $result = mysqli_query($connection,$update_query);
+            if ($result && mysqli_affected_rows($connection) >= 0) {
+                // Success
+                redirect_to("manifest.php?id=".$post_id);
+            } else {
+                die("Subject update failed.".mysqli_error($connection));
+
+            }
+        }
 
         if (isset($_GET['id'])){
             $id=$_GET['id'];
@@ -126,6 +153,7 @@ include $basePath."includes/views/layout/header.php";
                     </thead></table>';
          }
             require $basePath.'/includes/views/modals/manifest.modal.php';
+            require $basePath.'/includes/views/modals/waybill.modal.php';
 
             ?>
         </div>
