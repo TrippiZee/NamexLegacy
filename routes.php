@@ -19,7 +19,7 @@
 //    'ajaxUsers' => $basePath.'includes/controllers/users.php',
 //]);
 
-$router->get('',$basePath.'includes/controllers/dashboard.php');
+$router->get('','customerController@allCustomers');
 $router->get('customer',$basePath.'includes/controllers/customerview.php');
 $router->get('manifest',$basePath.'includes/controllers/manifestview.php');
 $router->get('waybill',$basePath.'includes/controllers/waybillview.php');

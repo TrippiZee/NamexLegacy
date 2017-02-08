@@ -6,6 +6,7 @@
 * Date:    2011-06-18                                                          *
 * Author:  Olivier PLATHEY                                                     *
 *******************************************************************************/
+namespace Includes;
 
 define('FPDF_VERSION','1.7');
 

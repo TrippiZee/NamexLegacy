@@ -1,4 +1,6 @@
 <?php
+
+use Includes\Models\Connection;
 require ($basePath."/includes/core.php");
 //require ($basePath."/includes/router.php");
 require ($basePath."/includes/db_connection.php");

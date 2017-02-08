@@ -1,5 +1,8 @@
 <?php
 
+namespace Includes\Models;
+use PDO;
+
 class Connection{
     public static function connect($config){
 

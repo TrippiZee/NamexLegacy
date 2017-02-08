@@ -1,5 +1,7 @@
 <?php
 
+namespace Includes\Models;
+
 class Manifest
 {
     public $id;

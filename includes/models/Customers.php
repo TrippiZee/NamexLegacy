@@ -1,5 +1,6 @@
 <?php
 
+namespace Includes\Models;
 
 class Customers{
 

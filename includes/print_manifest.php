@@ -1,5 +1,9 @@
 <?php
-require('fpdf.php');
+
+namespace Includes;
+
+use Includes\FPDF;
+//require('fpdf.php');
 //require("core.php");
 //require("db_connection.php");
 

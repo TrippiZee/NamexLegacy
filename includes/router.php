@@ -1,5 +1,7 @@
 <?php
 
+namespace Includes;
+
 class Router {
 
     protected $routes = [
@@ -34,9 +36,22 @@ class Router {
     public function redirect($uri, $requestType){
 
         if(array_key_exists($uri, $this->routes[$requestType])){
-            return $this->routes[$requestType][$uri];
+//            return $this->routes[$requestType][$uri];
+            return $this->callAction(
+                ...explode('@',$this->routes[$requestType][$uri])
+            );
         }
 
         throw new Exception('NO ROUTES');
+    }
+
+    protected function callAction($controller,$method){
+
+        if(!method_exists($controller,$method)){
+            throw new \Exception(
+                "No {$method} exists is route: {$controller}"
+            );
+        }
+        return (new $controller)->$method();
     }
 }
