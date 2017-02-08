@@ -2,6 +2,8 @@
 
 namespace Includes;
 
+use Includes\Controllers\CustomerController;
+
 class Router {
 
     protected $routes = [
@@ -47,11 +49,13 @@ class Router {
 
     protected function callAction($controller,$method){
 
-        if(!method_exists($controller,$method)){
-            throw new \Exception(
-                "No {$method} exists is route: {$controller}"
-            );
-        }
-        return (new $controller)->$method();
+//        if(!method_exists($controller,$method)){
+//            throw new \Exception(
+//                "No {$method} exists in route: {$controller}"
+//            );
+//        }
+//        return (new $controller)->$method();
+        $test = new CustomerController();
+        return $test->allCustomers();
     }
 }

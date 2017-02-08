@@ -19,19 +19,19 @@
 //    'ajaxUsers' => $basePath.'includes/controllers/users.php',
 //]);
 
-$router->get('','customerController@allCustomers');
-$router->get('customer',$basePath.'includes/controllers/customerview.php');
-$router->get('manifest',$basePath.'includes/controllers/manifestview.php');
-$router->get('waybill',$basePath.'includes/controllers/waybillview.php');
-$router->get('pod',$basePath.'includes/controllers/podview.php');
-$router->get('tracking',$basePath.'includes/controllers/dashboard.php');
-$router->get('costing',$basePath.'includes/controllers/dashboard.php');
-$router->get('reports',$basePath.'includes/controllers/dashboard.php');
-$router->get('user',$basePath.'includes/controllers/userview.php');
-$router->get('logout',$basePath.'includes/controllers/logout.php');
-$router->get('print_manifest',$basePath.'includes/print_manifest.php');
-$router->post('ajaxCustomer',$basePath.'includes/controllers/customers.php');
-$router->post('ajaxManifest',$basePath.'includes/controllers/manifests.php');
-$router->post('ajaxPods',$basePath.'includes/controllers/pods.php');
-$router->post('ajaxWaybills',$basePath.'includes/controllers/waybills.php');
-$router->post('ajaxUsers',$basePath.'includes/controllers/users.php');
+$router->get('','CustomerController@allCustomers');
+//$router->get('customer',$basePath.'includes/controllers/customerview.php');
+//$router->get('manifest',$basePath.'includes/controllers/manifestview.php');
+//$router->get('waybill',$basePath.'includes/controllers/waybillview.php');
+//$router->get('pod',$basePath.'includes/controllers/podview.php');
+//$router->get('tracking',$basePath.'includes/controllers/dashboard.php');
+//$router->get('costing',$basePath.'includes/controllers/dashboard.php');
+//$router->get('reports',$basePath.'includes/controllers/dashboard.php');
+//$router->get('user',$basePath.'includes/controllers/userview.php');
+//$router->get('logout',$basePath.'includes/controllers/logout.php');
+//$router->get('print_manifest',$basePath.'includes/print_manifest.php');
+//$router->post('ajaxCustomer',$basePath.'includes/controllers/customers.php');
+//$router->post('ajaxManifest',$basePath.'includes/controllers/manifests.php');
+//$router->post('ajaxPods',$basePath.'includes/controllers/pods.php');
+//$router->post('ajaxWaybills',$basePath.'includes/controllers/waybills.php');
+//$router->post('ajaxUsers',$basePath.'includes/controllers/users.php');

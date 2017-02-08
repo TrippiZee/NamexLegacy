@@ -4,11 +4,13 @@ namespace Includes\Controllers;
 
 class CustomerController {
 
-    function allCustomers(){
-        require $basePath.'/includes/views/customer.view.php';
+    public function allCustomers(){
+        $basepath = __DIR__.'/../';
+
+        require $basepath.'/views/customer.view.php';
     }
 
-    function filterCustomers(){
+    public function filterCustomers($pdo){
 
         $tableRequest = $_REQUEST;
 //var_dump($tableRequest);
