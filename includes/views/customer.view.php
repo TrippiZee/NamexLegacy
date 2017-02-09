@@ -1,5 +1,5 @@
 <?php
-include $basePath."includes/views/layout/header.php";
+//include $basePath."includes/views/layout/header.php";
 ?>
 <div class="col-sm-11 main">
     <div class="row">
@@ -126,7 +126,7 @@ include $basePath."includes/views/layout/header.php";
                     <tr><th>Name</th><th>Account Number</th><th>Address</th><th>City</th><th>Country</th></tr>
                     </thead></table>';
         }
-        require $basePath.'/includes/views/modals/customer.modal.php';
+        require 'modals/customer.modal.php';
         ?>
 
 
@@ -134,6 +134,6 @@ include $basePath."includes/views/layout/header.php";
     </div>
 </div>
 <?php
-include $basePath."includes/views/layout/footer.php";
+//include $basePath."includes/views/layout/footer.php";
 ?>
 

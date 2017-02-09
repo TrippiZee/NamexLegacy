@@ -3,6 +3,7 @@
 namespace Includes;
 
 use Includes\Controllers\CustomerController;
+use Exception;
 
 class Router {
 
