@@ -2,6 +2,9 @@
 
 namespace Includes\Controllers;
 
+use Includes\App;
+use Includes\Models\Customers;
+
 class CustomerController {
 
     public function allCustomers(){
@@ -10,8 +13,10 @@ class CustomerController {
         require $basepath.'/views/customer.view.php';
     }
 
-    public function filterCustomers($pdo){
+    public function filterCustomers(){
 
+        $pdo = App::get('pdo');
+        $customer = new Customers();
         $tableRequest = $_REQUEST;
 //var_dump($tableRequest);
         $columns = array(
@@ -24,7 +29,7 @@ class CustomerController {
         $searchTerm = $_REQUEST['search']['value'];
 
         $totalRows = $pdo->query('select count(*) from customers')->fetchColumn();
-        list($tableData,$rowCount) = getAllCustomers($pdo,$columns,$tableRequest,$searchTerm);
+        list($tableData,$rowCount) = $customer->getAllCustomers($pdo,$columns,$tableRequest,$searchTerm);
 
         $customers = array();
 

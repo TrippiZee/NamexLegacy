@@ -3,6 +3,8 @@ ob_start();
 session_start();
 $current_file = $_SERVER['SCRIPT_NAME'];
 
+use Includes\Models\Customers;
+
 function logged_in() {
     if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
         return true;
@@ -89,17 +91,17 @@ function getAllWaybills($pdo,$columns,$request,$searchTerm){
     return array($statement->fetchAll(PDO::FETCH_CLASS,'Waybills'),$filter->rowCount());
 }
 
-function getAllCustomers($pdo,$columns,$request,$searchTerm){
-    $statement = $pdo->prepare('SELECT * FROM customers WHERE 1 AND ( comp_name LIKE "'.$searchTerm.'%" OR acc_no LIKE "'.$searchTerm.'%" OR address1 LIKE "'.$searchTerm.'%" OR city LIKE "'.$searchTerm.'%" OR country LIKE "'.$searchTerm.'%" ) ORDER BY '.$columns[$request['order'][0]['column']].' '.$request['order'][0]['dir'].' LIMIT '.$request['start'].' ,'.$request['length'].' ');
-
-    $statement->execute();
-
-    $filter = $pdo->prepare('SELECT * FROM customers WHERE 1 AND ( comp_name LIKE "'.$searchTerm.'%" OR acc_no LIKE "'.$searchTerm.'%" OR address1 LIKE "'.$searchTerm.'%" OR city LIKE "'.$searchTerm.'%" OR country LIKE "'.$searchTerm.'%" )');
-
-    $filter->execute();
-
-    return array($statement->fetchAll(PDO::FETCH_CLASS,'Customers'),$filter->rowCount());
-}
+//function getAllCustomers($pdo,$columns,$request,$searchTerm){
+//    $statement = $pdo->prepare('SELECT * FROM customers WHERE 1 AND ( comp_name LIKE "'.$searchTerm.'%" OR acc_no LIKE "'.$searchTerm.'%" OR address1 LIKE "'.$searchTerm.'%" OR city LIKE "'.$searchTerm.'%" OR country LIKE "'.$searchTerm.'%" ) ORDER BY '.$columns[$request['order'][0]['column']].' '.$request['order'][0]['dir'].' LIMIT '.$request['start'].' ,'.$request['length'].' ');
+//
+//    $statement->execute();
+//
+//    $filter = $pdo->prepare('SELECT * FROM customers WHERE 1 AND ( comp_name LIKE "'.$searchTerm.'%" OR acc_no LIKE "'.$searchTerm.'%" OR address1 LIKE "'.$searchTerm.'%" OR city LIKE "'.$searchTerm.'%" OR country LIKE "'.$searchTerm.'%" )');
+//
+//    $filter->execute();
+//
+//    return array($statement->fetchAll(PDO::FETCH_CLASS,'Customers'),$filter->rowCount());
+//}
 
 function customer ($id){
     global $connection;
