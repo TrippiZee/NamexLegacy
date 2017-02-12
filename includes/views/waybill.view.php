@@ -1,12 +1,12 @@
 <?php
-include $basePath."includes/views/layout/header.php";
+include "../includes/views/layout/header.php";
 ?>
 <div class="col-sm-11 main">
     <div class="row">
         <div class="col-sm-12">
         <?php
 
-        $services = getServices($pdo);
+//        $services = getServices($pdo);
 
         if (isset($_POST['createPOD'])) {
 
@@ -78,7 +78,7 @@ include $basePath."includes/views/layout/header.php";
                     <tr><th>Waybill_No</th><th>Date</th><th>Manifest_No</th><th>Shipper</th><th>Consignee</th></tr>
                     </thead></table>';
         }
-        require $basePath.'/includes/views/modals/waybill.modal.php';
+        require 'modals/waybill.modal.php';
         ?>
 
 
@@ -86,5 +86,5 @@ include $basePath."includes/views/layout/header.php";
     </div>
 </div>
 <?php
-include $basePath."includes/views/layout/footer.php";
+include "../includes/views/layout/footer.php";
 ?>

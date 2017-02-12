@@ -1,5 +1,5 @@
 <?php
-//include $basePath."includes/views/layout/header.php";
+include "../includes/views/layout/header.php";
 ?>
 <div class="col-sm-11 main">
     <div class="row">
@@ -134,6 +134,6 @@
     </div>
 </div>
 <?php
-//include $basePath."includes/views/layout/footer.php";
+include "../includes/views/layout/footer.php";
 ?>
 

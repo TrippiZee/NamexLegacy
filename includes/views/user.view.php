@@ -1,5 +1,5 @@
 <?php
-include $basePath."includes/views/layout/header.php";
+include "../includes/views/layout/header.php";
 
 ?>
 <div class="col-sm-11 main">
@@ -14,7 +14,7 @@ include $basePath."includes/views/layout/header.php";
         <div class="col-sm-12">
 
         <?php
-        $roles = user_role($pdo);
+//        $roles = user_role($pdo);
 
         if (isset($_POST['addUser'])) {
 
@@ -118,14 +118,14 @@ include $basePath."includes/views/layout/header.php";
 //            echo '</tbody></table>';
         }
 
-        require $basePath.'/includes/views/modals/user.modal.php';
+        require 'modals/user.modal.php';
         ?>
 
     </div>
 </div>
 </div>
 <?php
-include $basePath."includes/views/layout/footer.php";
+include "../includes/views/layout/footer.php";
 ?>
 
 

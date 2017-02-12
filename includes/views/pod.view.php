@@ -1,5 +1,5 @@
 <?php
-include $basePath."includes/views/layout/header.php";
+include "../includes/views/layout/header.php";
 ?>
 <div class="col-sm-11 main">
     <div class="row">
@@ -86,12 +86,12 @@ include $basePath."includes/views/layout/header.php";
                     <tr><th>POD Number</th><th>Date</th><th>Shipper</th><th>Consignee</th></tr>
                     </thead></table>';
         }
-        require $basePath.'/includes/views/modals/pod.modal.php';
+        require 'modals/pod.modal.php';
 
         ?>
         </div>
     </div>
 </div>
 <?php
-include $basePath."includes/views/layout/footer.php";
+include "../includes/views/layout/footer.php";
 ?>

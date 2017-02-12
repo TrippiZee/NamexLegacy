@@ -1,5 +1,5 @@
 <?php
-include $basePath."includes/views/layout/header.php";
+include "../includes/views/layout/header.php";
 ?>
 <div class="col-sm-11 main">
     <div class="row">
@@ -152,13 +152,13 @@ include $basePath."includes/views/layout/header.php";
                     <tr><th>Date</th><th>Manifest No</th><th>Driver</th><th>Co-Driver</th><th>Reg No</th></tr>
                     </thead></table>';
          }
-            require $basePath.'/includes/views/modals/manifest.modal.php';
-            require $basePath.'/includes/views/modals/waybill.modal.php';
+            require 'modals/manifest.modal.php';
+            require 'modals/waybill.modal.php';
 
             ?>
         </div>
     </div>
 </div>
 <?php
-include $basePath."includes/views/layout/footer.php";
+include "../includes/views/layout/footer.php";
 ?>

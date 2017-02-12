@@ -18,7 +18,6 @@ class CustomerController {
         $pdo = App::get('pdo');
         $customer = new Customers();
         $tableRequest = $_REQUEST;
-//var_dump($tableRequest);
         $columns = array(
             0 => 'comp_name',
             1 => 'acc_no',
@@ -54,6 +53,5 @@ class CustomerController {
         );
 
         echo json_encode($json_data);
-
     }
 }

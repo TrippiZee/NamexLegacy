@@ -6,6 +6,10 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit819f9842d034e6439b92d992998a92c9
 {
+    public static $files = array (
+        '275ee92beb648277120f236f69820590' => __DIR__ . '/../..' . '/includes/helpers/global.php',
+    );
+
     public static $classMap = array (
         'ComposerAutoloaderInit819f9842d034e6439b92d992998a92c9' => __DIR__ . '/..' . '/composer/autoload_real.php',
         'Composer\\Autoload\\ClassLoader' => __DIR__ . '/..' . '/composer/ClassLoader.php',

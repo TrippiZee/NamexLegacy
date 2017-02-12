@@ -12,9 +12,9 @@ use Includes\Request;
 
 if (logged_in()) {
 //    require $router->redirect(Request::uri(), Request::method());
-    require $basePath.'includes/views/layout/header.php';
+//    require $basePath.'includes/views/layout/header.php';
     Router::load($basePath.'routes.php')->redirect(Request::uri(),Request::method());
-    require $basePath.'includes/views/layout/footer.php';
+//    require $basePath.'includes/views/layout/footer.php';
 } else {
     include $basePath."/loginform.php";
 
