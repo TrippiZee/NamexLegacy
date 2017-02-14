@@ -8,9 +8,8 @@ use Includes\Models\Customers;
 class CustomerController {
 
     public function allCustomers(){
-        $basepath = __DIR__.'/../';
 
-        require $basepath.'/views/customer.view.php';
+        return view('customer');
     }
 
     public function filterCustomers(){

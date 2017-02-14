@@ -7,9 +7,8 @@ use Includes\Models\Manifest;
 class ManifestController {
 
     public function allManifests(){
-        $basepath = __DIR__.'/../';
 
-        require $basepath.'/views/manifest.view.php';
+        return view('manifest');
     }
 
     public function filterManifests()
