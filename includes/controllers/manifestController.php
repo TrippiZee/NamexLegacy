@@ -8,7 +8,8 @@ class ManifestController {
 
     public function allManifests(){
 
-        return view('manifest');
+        global $connection;
+        return view('manifest',['connection'=>$connection]);
     }
 
     public function filterManifests()
